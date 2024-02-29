@@ -4,4 +4,8 @@ import Footer from "./Footer";
 
 import BlogBoard from "./BlogBoard";
 
-export { BlogBoard, Footer, Header };
+import PopularBlog from "./PopularBlog";
+
+import FavouriteBlog from "./FavouriteBlog";
+
+export { BlogBoard, FavouriteBlog, Footer, Header, PopularBlog };
