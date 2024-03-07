@@ -1,11 +1,9 @@
-import { BlogBoard, Footer, Header } from "../components";
+import { BlogBoard } from "../components";
 
 export default function HomePage() {
   return (
     <>
-      <Header />
       <BlogBoard />
-      <Footer />
     </>
   );
 }

@@ -2,10 +2,11 @@ import Header from "./Header";
 
 import Footer from "./Footer";
 
-import BlogBoard from "./BlogBoard";
+import BlogList from "./blog/BlogList";
 
 import PopularBlog from "./PopularBlog";
 
-import FavouriteBlog from "./FavouriteBlog";
+import BlogBoard from "./blog/BlogBoard";
+import FavouriteBlog from "./blog/FavouriteBlog";
 
-export { BlogBoard, FavouriteBlog, Footer, Header, PopularBlog };
+export { BlogBoard, BlogList, FavouriteBlog, Footer, Header, PopularBlog };

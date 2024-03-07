@@ -1,0 +1,7 @@
+export const actions = {
+  blog: {
+    DATA_FETCHING: "BLOG_DATA_FETCHING",
+    DATA_FETCHED: "BLOG_DATA_FETCHED",
+    DATA_FETCHED_ERROR: "BLOG_DATA_FETCHED_ERROR",
+  },
+};
