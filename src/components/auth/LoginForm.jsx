@@ -24,8 +24,10 @@ export default function LoginForm() {
       if (response.status === 200) {
         const { user, token } = response.data;
 
+        console.log(token);
+
         if (token) {
-          const authToken = token.token;
+          const authToken = token.accessToken;
           const refreshToken = token.refreshToken;
           setAuth({ user, authToken, refreshToken });
           navigate("/");
@@ -75,6 +77,9 @@ export default function LoginForm() {
         <Link to="/register" className="text-indigo-600 hover:underline">
           Register
         </Link>
+      </p>
+      <p className="text-gray-500 text-center text-lg mt-10">
+        {errors?.root?.random?.message}
       </p>
     </form>
   );

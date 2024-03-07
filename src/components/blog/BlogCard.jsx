@@ -1,26 +1,38 @@
-import { ReactRoadMap } from "../../constans/image";
+import { Link, useNavigate } from "react-router-dom";
+import { useSingleBlog } from "../../hooks";
 import { formatDate } from "../../utils";
 import BlogAction from "./BlogAction";
 
 const BlogCard = ({ blog }) => {
-  console.log(blog.thumbnail);
+  const navigate = useNavigate();
+  const { setBlogId } = useSingleBlog();
 
+  const handleSingleBlogDetails = (blogId) => {
+    navigate("/singleblog");
+    setBlogId(blogId);
+  };
   return (
-    <div className="blog-card">
-      <img className="blog-thumb" src={ReactRoadMap} alt="Blog_Template" />
+    <div className="blog-card" onClick={() => handleSingleBlogDetails(blog.id)}>
+      <img
+        className="blog-thumb"
+        src={`http://localhost:3000/uploads/blog/${blog?.thumbnail}`}
+        alt="Blog_Template"
+      />
+
+      {/* uploads/blog/thumbnail-1708703405446-607606083.jpeg */}
       <div className="mt-2 relative">
-        <a href="./single-blog.html">
+        <Link href="./single-blog.html">
           <h3 className="text-slate-300 text-xl lg:text-2xl">
             <a href="./single-blog.html">{blog?.title}</a>
           </h3>
-        </a>
+        </Link>
         <p className="mb-6 text-base text-slate-500 mt-1">{blog?.content}</p>
 
         {/* <!-- Meta Informations --> */}
         <div className="flex justify-between items-center">
           <div className="flex items-center capitalize space-x-2">
             <div className="avater-img bg-indigo-600 text-white">
-              <span className="">{blog?.author?.firstName.charAt(0)}</span>
+              <span className="">{blog?.author?.firstName?.charAt(0)}</span>
             </div>
 
             <div>

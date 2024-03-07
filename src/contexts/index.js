@@ -4,4 +4,8 @@ const BlogContext = createContext();
 
 const AuthContext = createContext();
 
-export { AuthContext, BlogContext };
+const SingleBlogContext = createContext();
+
+const ProfileContext = createContext();
+
+export { AuthContext, BlogContext, ProfileContext, SingleBlogContext };

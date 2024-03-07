@@ -5,7 +5,7 @@ import Logout from "./auth/Logout";
 
 export default function Header() {
   const { auth } = useAuth();
-  console.log(auth?.user?.firstName);
+
   return (
     <header>
       <nav className="container">
