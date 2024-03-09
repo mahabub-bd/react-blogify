@@ -6,7 +6,7 @@ const initialState = {
   error: null,
 };
 
-const blogReducer = (state = initialState, action) => {
+const mostpopularReducer = (state, action) => {
   switch (action.type) {
     case actions.blog.DATA_FETCHING: {
       return {
@@ -25,32 +25,14 @@ const blogReducer = (state = initialState, action) => {
     case actions.blog.DATA_FETCHED_ERROR: {
       return {
         ...state,
-        loading: false,
+        loading: true,
         error: action.error,
       };
     }
-
-    case actions.blog.DELETE_BLOG_SUCCESS: {
-      const updatedBlogs = state.blogs.filter(
-        (blog) => blog.id !== action.blogId
-      );
-      return {
-        ...state,
-        blogs: updatedBlogs,
-      };
-    }
-
-    case actions.blog.DELETE_BLOG_FAILURE: {
-      return {
-        ...state,
-        error: action.error,
-      };
-    }
-
     default: {
       return state;
     }
   }
 };
 
-export { blogReducer, initialState };
+export { initialState, mostpopularReducer };

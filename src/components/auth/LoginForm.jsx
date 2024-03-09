@@ -24,8 +24,6 @@ export default function LoginForm() {
       if (response.status === 200) {
         const { user, token } = response.data;
 
-        console.log(token);
-
         if (token) {
           const authToken = token.accessToken;
           const refreshToken = token.refreshToken;
@@ -37,7 +35,7 @@ export default function LoginForm() {
       console.error(error);
       setError("root.random", {
         type: "random",
-        message: `User with email ${formData.email} is not found`,
+        message: ` ${error.response.data.error}`,
       });
     }
   };

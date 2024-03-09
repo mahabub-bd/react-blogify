@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LogoImage, SearchIcon } from "../constans/image";
-import { useAuth } from "../hooks";
+import { useAuth, useProfile } from "../hooks";
 import Logout from "./auth/Logout";
 
 export default function Header() {
   const { auth } = useAuth();
+  const navigate = useNavigate();
+  const { setAuthor } = useProfile();
 
   return (
     <header>
@@ -23,12 +25,12 @@ export default function Header() {
         <div>
           <ul className="flex items-center space-x-5">
             <li>
-              <a
-                href="./createBlog.html"
+              <Link
+                to="/createblog"
                 className="bg-indigo-600 text-white px-6 py-2 md:py-3 rounded-md hover:bg-indigo-700 transition-all duration-200"
               >
                 Write
-              </a>
+              </Link>
             </li>
             {auth?.user && (
               <li>
@@ -54,22 +56,38 @@ export default function Header() {
               </li>
             )}
 
-            <li className="flex items-center">
+            <li
+              className="flex items-center cursor-pointer "
+              onClick={() => {
+                navigate("/author");
+                setAuthor(auth?.user?.id);
+              }}
+            >
               {/* <!-- Circular Div with background color --> */}
-              {auth?.user && (
-                <div className="avater-img bg-orange-600 text-white">
-                  <span className="">{`${auth?.user?.firstName.charAt(
-                    0
-                  )}`}</span>
-                  {/* <!-- User's first name initial --> */}
-                </div>
+              {auth?.user && auth.user.avatar ? (
+                <img
+                  className="w-10 rounded-full"
+                  src={`${
+                    import.meta.env.VITE_SERVER_BASE_URL
+                  }/uploads/avatar/${auth.user.avatar}`}
+                  alt="avatar"
+                />
+              ) : (
+                auth.user && (
+                  <div className="avater-img bg-orange-600 text-white">
+                    <span className="">{`${auth.user.firstName.charAt(
+                      0
+                    )}`}</span>
+                    {/* <!-- User's first name initial --> */}
+                  </div>
+                )
               )}
 
               {/* <!-- Logged-in user's name --> */}
               {auth?.user && (
-                <Link to="/me">
+                <p>
                   <span className="text-white ml-2">{`${auth?.user?.firstName} ${auth?.user?.lastName}`}</span>
-                </Link>
+                </p>
               )}
 
               {/* <!-- Profile Image --> */}

@@ -7,5 +7,15 @@ function formatDate(dateString) {
   };
   return date.toLocaleDateString("en-US", options);
 }
-
-export { formatDate };
+function commentColor(index) {
+  const backgroundColor =
+    index === 0
+      ? "bg-rose-600"
+      : index === 1
+      ? "bg-sky-600"
+      : index === 2
+      ? "bg-green-600"
+      : "bg-purple-600";
+  return backgroundColor;
+}
+export { commentColor, formatDate };

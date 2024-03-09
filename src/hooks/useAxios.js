@@ -15,6 +15,8 @@ const useAxios = () => {
           config.headers.Authorization = `Bearer ${authToken}`;
         }
         return config;
+        // eslint-disable-next-line no-unreachable
+        console.log(config);
       },
       (error) => Promise.reject(error)
     );

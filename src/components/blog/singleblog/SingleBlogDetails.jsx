@@ -1,9 +1,11 @@
-import { useSingleBlog } from "../../../hooks";
+import { Link } from "react-router-dom";
+import { useProfile, useSingleBlog } from "../../../hooks";
 import { formatDate } from "../../../utils";
 import Comment from "./Comment";
 
 export default function SingleBlogDetails() {
   const { state } = useSingleBlog();
+  const { setAuthor } = useProfile();
 
   state?.blog?.tags?.split(", ");
 
@@ -17,13 +19,32 @@ export default function SingleBlogDetails() {
           </h1>
           <div className="flex justify-center items-center my-4 gap-4">
             <div className="flex items-center capitalize space-x-2">
-              <div className="avater-img bg-indigo-600 text-white">
-                <span className="">
-                  {state?.blog?.author?.firstName.charAt(0)}
-                </span>
-              </div>
+              {/* Avatar */}
+              {state?.blog?.author?.avatar ? (
+                <img
+                  className="w-10 rounded-full"
+                  src={`${
+                    import.meta.env.VITE_SERVER_BASE_URL
+                  }/uploads/avatar/${state?.blog?.author?.avatar}`}
+                  alt="avatar"
+                />
+              ) : (
+                <div className="avater-img bg-indigo-600 text-white">
+                  <span className="">
+                    {state?.blog?.author?.firstName?.charAt(0)}
+                  </span>
+                </div>
+              )}
               <h5 className="text-slate-500 text-sm">
-                {`${state?.blog?.author?.firstName} ${state?.blog?.author?.lastName} `}{" "}
+                <Link
+                  to="/author"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setAuthor(state?.blog?.author?.id);
+                  }}
+                >
+                  {`${state?.blog?.author?.firstName} ${state?.blog?.author?.lastName}`}{" "}
+                </Link>
               </h5>
             </div>
             <span className="text-sm text-slate-700 dot">
@@ -43,7 +64,7 @@ export default function SingleBlogDetails() {
 
           <ul className="tags">
             {state?.blog?.tags?.split(", ").map((tag) => (
-              <li key={tag}> {tag}</li>
+              <li key={tag}> {tag.toUpperCase()}</li>
             ))}
           </ul>
 

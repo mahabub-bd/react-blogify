@@ -1,8 +1,59 @@
-import { useAuth, useSingleBlog } from "../../../hooks";
+import { useState } from "react";
+import { actions } from "../../../actions";
+import { DeleteIcon } from "../../../constans/image";
+import { useAuth, useAxios, useSingleBlog } from "../../../hooks";
+import { commentColor } from "../../../utils";
 
 export default function Comment() {
+  const [comment, setComments] = useState("");
   const { auth } = useAuth();
-  const { state } = useSingleBlog();
+  const { state, dispatch } = useSingleBlog();
+  const { api } = useAxios();
+
+  const handleCommnetAdd = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await api.post(
+        `http://localhost:3000/blogs/${state?.blog?.id}/comment`,
+        comment
+      );
+
+      if (response.status === 200) {
+        dispatch({
+          type: actions.singleblog.NEW_COMMENT_ADD,
+          data: response.data,
+        });
+      }
+    } catch (error) {
+      dispatch({
+        type: actions.singleblog.NEW_COMMENT_ADD_ERROR,
+        error: error.message,
+      });
+    } finally {
+      setComments("");
+    }
+  };
+  const handleCommentDelete = async (commentId) => {
+    try {
+      await api.delete(
+        `${import.meta.env.VITE_SERVER_BASE_URL}/blogs/${
+          state?.blog?.id
+        }/comment/${commentId}`
+      );
+
+      dispatch({
+        type: actions.singleblog.COMMENT_DELETE,
+        commentId: commentId,
+      });
+    } catch (error) {
+      console.error("Error deleting blog:", error);
+
+      dispatch({
+        type: actions.singleblog.COMMENT_DELETE_ERROR,
+        error: error.message,
+      });
+    }
+  };
 
   return (
     <section id="comments">
@@ -16,33 +67,54 @@ export default function Comment() {
             <div className="avater-img bg-indigo-600 text-white">
               <span className="">S</span>
             </div>
-            <div className="w-full">
+            <form className="w-full" onSubmit={handleCommnetAdd}>
               <textarea
+                value={comment}
+                onChange={(e) => setComments(e.target.value)}
                 className="w-full bg-[#030317] border border-slate-500 text-slate-300 p-4 rounded-md focus:outline-none"
                 placeholder="Write a comment"
               ></textarea>
               <div className="flex justify-end mt-4">
-                <button className="bg-indigo-600 text-white px-6 py-2 md:py-3 rounded-md hover:bg-indigo-700 transition-all duration-200">
+                <button
+                  type="submit"
+                  className="bg-indigo-600 text-white px-6 py-2 md:py-3 rounded-md hover:bg-indigo-700 transition-all duration-200"
+                >
                   Comment
                 </button>
               </div>
-            </div>
+            </form>
           </div>
         )}
 
-        {state?.blog?.comments?.map((comment) => (
-          <div key={comment.id} className="flex items-start space-x-4 my-8">
-            <div className="avater-img bg-orange-600 text-white">
-              <span className="">{comment?.author?.firstName?.charAt(0)}</span>
+        {state?.blog?.comments?.map((comment, index) => {
+          const commentBg = commentColor(index); // Define commentBg here
+          return (
+            <div key={comment.id} className="flex items-start space-x-4 my-8">
+              <div
+                className={` ${commentBg} avater-img bg-orange-600 text-white`}
+              >
+                <span>{comment?.author?.firstName?.charAt(0)}</span>
+              </div>
+              <div className="w-full">
+                <h5 className="text-slate-500 font-bold">
+                  {comment?.author?.firstName} {comment?.author?.lastName}
+                </h5>
+                <div className="flex items-center w-50">
+                  <p className="text-slate-300 w-3/4">{comment.content}</p>
+
+                  {comment?.author?.id === auth?.user?.id && (
+                    <button
+                      onClick={() => handleCommentDelete(comment.id)}
+                      className="ml-10 hover:opacity-70 w-1/4"
+                    >
+                      <img src={DeleteIcon} alt="delete" />
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
-            <div className="w-full">
-              <h5 className="text-slate -500 font-bold">
-                {comment?.author?.firstName} {comment?.author?.lastName}
-              </h5>
-              <p className="text-slate-300">{comment.content}</p>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

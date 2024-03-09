@@ -14,8 +14,11 @@ const BlogBoard = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_SERVER_BASE_URL}/blogs?page=1`
+          `${
+            import.meta.env.VITE_SERVER_BASE_URL
+          }/blogs?limit=10&offset=0?page=1`
         );
+
         dispatch({
           type: actions.blog.DATA_FETCHED,
           data: response.data,
@@ -33,6 +36,13 @@ const BlogBoard = () => {
     fetchData();
   }, [dispatch]);
 
+  if (state.loading) {
+    return (
+      <div className="min-h-[740px] flex justify-center items-center">
+        Fetching Loading Blog Data ...
+      </div>
+    );
+  }
   return (
     <main>
       <section>

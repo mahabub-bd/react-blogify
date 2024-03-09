@@ -29,6 +29,50 @@ const singleBlogReducer = (state, action) => {
         error: action.error,
       };
     }
+
+    case actions.singleblog.NEW_COMMENT_ADD: {
+      return {
+        ...state,
+        loading: true,
+        blog: {
+          ...state.blog,
+          comments: action.data.comments,
+        },
+      };
+    }
+
+    case actions.singleblog.COMMENT_DELETE: {
+      const updatedComments = state.blog.comments.filter(
+        (comment) => comment.id !== action.commentId
+      );
+
+      return {
+        ...state,
+        blog: {
+          ...state.blog,
+          comments: updatedComments,
+        },
+      };
+    }
+
+    case actions.blog.DELETE_BLOG_SUCCESS: {
+      const updatedBlogs = state.blogs.filter(
+        (blog) => blog.id !== action.blogId
+      );
+      return {
+        ...state,
+        blogs: updatedBlogs,
+      };
+    }
+
+    case actions.singleblog.NEW_COMMENT_ADD_ERROR: {
+      return {
+        ...state,
+        loading: true,
+        error: action.error,
+      };
+    }
+
     default: {
       return state;
     }

@@ -10,9 +10,21 @@ import EditIcon from "../assets/icons/edit.svg";
 
 import DeleteIcon from "../assets/icons/delete.svg";
 
+import CommentIcon from "../assets/icons/comment.svg";
+
+import LikeIcon from "../assets/icons/like.svg";
+
+import HeartIcon from "../assets/icons/heart.svg";
+
+import CheckedIcon from "../assets/icons/check.svg";
+
 export {
+  CheckedIcon,
+  CommentIcon,
   DeleteIcon,
   EditIcon,
+  HeartIcon,
+  LikeIcon,
   LogoImage,
   ReactRoadMap,
   SearchIcon,

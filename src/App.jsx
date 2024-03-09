@@ -1,9 +1,11 @@
 import { Route, Routes } from "react-router-dom";
+import CreateBlog from "./page/CreateBlog";
 import HomePage from "./page/HomePage";
 import LoginPage from "./page/LoginPage";
 import ProfilePage from "./page/ProfilePage";
 import RegisterPage from "./page/Register";
 import SingleBlogPage from "./page/SingleBlogPage";
+import PrivateRoutes from "./routes/PrivateRoutes";
 import PublicRoutes from "./routes/Routes";
 
 function App() {
@@ -14,8 +16,11 @@ function App() {
           <Route element={<HomePage />} path="/" />
           <Route element={<LoginPage />} path="/login" />
           <Route element={<RegisterPage />} path="/register" />
-          <Route element={<ProfilePage />} path="/me" />
+          <Route element={<ProfilePage />} path="/author" />
           <Route element={<SingleBlogPage />} path="/singleblog" />
+        </Route>
+        <Route element={<PrivateRoutes />}>
+          <Route element={<CreateBlog />} path="/createblog" />
         </Route>
       </Routes>
     </div>
