@@ -15,7 +15,7 @@ export default function Comment() {
     try {
       const response = await api.post(
         `http://localhost:3000/blogs/${state?.blog?.id}/comment`,
-        comment
+        { comment }
       );
 
       if (response.status === 200) {
@@ -33,6 +33,7 @@ export default function Comment() {
       setComments("");
     }
   };
+
   const handleCommentDelete = async (commentId) => {
     try {
       await api.delete(
@@ -64,8 +65,25 @@ export default function Comment() {
 
         {auth?.user && (
           <div className="flex items -center space-x-4">
-            <div className="avater-img bg-indigo-600 text-white">
-              <span className="">S</span>
+            <div className=" text-white">
+              {auth?.user && auth.user.avatar ? (
+                <img
+                  className="w-10 rounded-full"
+                  src={`${
+                    import.meta.env.VITE_SERVER_BASE_URL
+                  }/uploads/avatar/${auth.user.avatar}`}
+                  alt="avatar"
+                />
+              ) : (
+                auth.user && (
+                  <div className="avater-img bg-orange-600 text-white">
+                    <span className="">{`${auth.user.firstName.charAt(
+                      0
+                    )}`}</span>
+                    {/* <!-- User's first name initial --> */}
+                  </div>
+                )
+              )}
             </div>
             <form className="w-full" onSubmit={handleCommnetAdd}>
               <textarea
