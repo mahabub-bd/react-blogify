@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import AuthorPage from "./page/AuthorPage";
 import CreateBlog from "./page/CreateBlog";
 import HomePage from "./page/HomePage";
 import LoginPage from "./page/LoginPage";
@@ -16,11 +17,13 @@ function App() {
           <Route element={<HomePage />} path="/" />
           <Route element={<LoginPage />} path="/login" />
           <Route element={<RegisterPage />} path="/register" />
-          <Route element={<ProfilePage />} path="/author" />
+
+          <Route element={<AuthorPage />} path="/author" />
           <Route element={<SingleBlogPage />} path="/singleblog" />
         </Route>
         <Route element={<PrivateRoutes />}>
           <Route element={<CreateBlog />} path="/createblog" />
+          <Route element={<ProfilePage />} path="/me" />
         </Route>
       </Routes>
     </div>

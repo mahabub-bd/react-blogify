@@ -59,7 +59,7 @@ export default function Header() {
             <li
               className="flex items-center cursor-pointer "
               onClick={() => {
-                navigate("/author");
+                navigate("/me");
                 setAuthor(auth?.user?.id);
               }}
             >

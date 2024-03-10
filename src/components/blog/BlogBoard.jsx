@@ -1,10 +1,9 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { actions } from "../../actions";
+import { FavouriteBlog, PopularBlog } from "../../components";
 import { useBlog } from "../../hooks";
-import PopularBlog from "../PopularBlog";
 import BlogList from "./BlogList";
-import FavouriteBlog from "./FavouriteBlog";
 
 const BlogBoard = () => {
   const { state, dispatch } = useBlog();

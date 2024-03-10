@@ -1,24 +1,25 @@
 import { useState } from "react";
 import { actions } from "../../actions";
-
 import { CheckedIcon, EditIcon } from "../../constans/image";
 import { useAxios, useProfile } from "../../hooks";
 
-const Bio = () => {
+const Bio = ({ isAuthonicate }) => {
   const { state, dispatch } = useProfile();
 
   const { api } = useAxios();
   const [bioData, setBioData] = useState(state?.user?.bio);
   const [editMode, setEditMode] = useState(false);
+
   const handleBioEdit = async () => {
     dispatch({ type: actions.profile.DATA_FETCHING });
     try {
       const response = await api.patch(
-        `${import.meta.env.VITE_SERVER_BASE_URL}/profile/${state?.user?.id}`,
-        { bioData }
+        `${import.meta.env.VITE_SERVER_BASE_URL}/profile`,
+        { bio: bioData }
       );
-      console.log(response.data);
+
       if (response.status === 200) {
+        console.log(response.data);
         dispatch({
           type: actions.profile.USER_DATA_EDITED,
           data: response.data,
@@ -51,15 +52,16 @@ const Bio = () => {
           />
         )}
       </div>
-      {/* <!-- Edit Bio button. The Above bio will be editable when clicking on the button --> */}
-      {!editMode ? (
+
+      {isAuthonicate && (
         <button
           className="flex-center h-7 w-7 rounded-full"
           onClick={() => setEditMode(true)}
         >
-          <img src={EditIcon} alt="Edit" />
+          {!editMode && <img src={EditIcon} alt="Edit" />}
         </button>
-      ) : (
+      )}
+      {editMode && isAuthonicate && (
         <button
           className="flex-center h-7 w-7 rounded-full"
           onClick={handleBioEdit}

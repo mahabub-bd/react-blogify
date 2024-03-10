@@ -8,21 +8,21 @@ const initialState = {
 
 const mostpopularReducer = (state, action) => {
   switch (action.type) {
-    case actions.blog.DATA_FETCHING: {
+    case actions.mostpopular.DATA_FETCHING: {
       return {
         ...state,
         loading: true,
       };
     }
 
-    case actions.blog.DATA_FETCHED:
+    case actions.mostpopular.DATA_FETCHED:
       return {
         ...state,
         loading: false,
         blogs: action.data.blogs,
       };
 
-    case actions.blog.DATA_FETCHED_ERROR: {
+    case actions.mostpopular.DATA_FETCHED_ERROR: {
       return {
         ...state,
         loading: true,

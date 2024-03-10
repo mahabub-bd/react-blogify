@@ -5,7 +5,7 @@ import { useAuth, useAxios, useSingleBlog } from "../../../hooks";
 import { commentColor } from "../../../utils";
 
 export default function Comment() {
-  const [comment, setComments] = useState("");
+  const [comments, setComments] = useState("");
   const { auth } = useAuth();
   const { state, dispatch } = useSingleBlog();
   const { api } = useAxios();
@@ -14,8 +14,10 @@ export default function Comment() {
     event.preventDefault();
     try {
       const response = await api.post(
-        `http://localhost:3000/blogs/${state?.blog?.id}/comment`,
-        { comment }
+        `${import.meta.env.VITE_SERVER_BASE_URL}/blogs/${
+          state?.blog?.id
+        }/comment`,
+        { content: comments }
       );
 
       if (response.status === 200) {
@@ -59,8 +61,11 @@ export default function Comment() {
   return (
     <section id="comments">
       <div className="mx-auto w-full md:w-10/12 container">
-        <h2 className="text-3xl font-bold my-8">
-          Comments - {state?.blog?.comments?.length}
+        <h2 className="text-2xl font-bold my-8">
+          Comments{" "}
+          <span className="inline-flex items-center justify-center w-5 py-1  text-xs font-semibold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-violet-600 rounded-full">
+            {state?.blog?.comments?.length}
+          </span>
         </h2>
 
         {auth?.user && (
@@ -87,7 +92,7 @@ export default function Comment() {
             </div>
             <form className="w-full" onSubmit={handleCommnetAdd}>
               <textarea
-                value={comment}
+                value={comments}
                 onChange={(e) => setComments(e.target.value)}
                 className="w-full bg-[#030317] border border-slate-500 text-slate-300 p-4 rounded-md focus:outline-none"
                 placeholder="Write a comment"
