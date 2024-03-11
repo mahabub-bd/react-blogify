@@ -11,7 +11,6 @@ export default function FavouriteBlog() {
   const navigate = useNavigate();
   const { api } = useAxios();
   const { auth } = useAuth();
-  console.log(state?.blogs);
 
   useEffect(() => {
     dispatch({ type: actions.favourite.DATA_FETCHING });

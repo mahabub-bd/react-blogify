@@ -30,6 +30,16 @@ const singleBlogReducer = (state, action) => {
       };
     }
 
+    case actions.blog.DELETE_BLOG_SUCCESS: {
+      const updatedBlogs = state.blogs.filter(
+        (blog) => blog.id !== action.blogId
+      );
+      return {
+        ...state,
+        blogs: updatedBlogs,
+      };
+    }
+
     case actions.singleblog.NEW_COMMENT_ADD: {
       return {
         ...state,
@@ -52,16 +62,6 @@ const singleBlogReducer = (state, action) => {
           ...state.blog,
           comments: updatedComments,
         },
-      };
-    }
-
-    case actions.blog.DELETE_BLOG_SUCCESS: {
-      const updatedBlogs = state.blogs.filter(
-        (blog) => blog.id !== action.blogId
-      );
-      return {
-        ...state,
-        blogs: updatedBlogs,
       };
     }
 
@@ -88,6 +88,17 @@ const singleBlogReducer = (state, action) => {
         ...state,
         loading: true,
         error: action.error,
+      };
+    }
+
+    case actions.singleblog.LIKE_BLOG_SUCCESS: {
+      return {
+        ...state,
+        loading: true,
+        blog: {
+          ...state.blog,
+          likes: action.data.likes,
+        },
       };
     }
     default: {

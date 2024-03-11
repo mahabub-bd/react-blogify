@@ -11,6 +11,25 @@ export default function SingleBlogAction() {
   const { state, dispatch } = useSingleBlog();
   const { api } = useAxios();
 
+  const handleLikeBlog = async () => {
+    try {
+      const response = await api.post(
+        `${import.meta.env.VITE_SERVER_BASE_URL}/blogs/${state?.blog?.id}/like`
+      );
+
+      if (response.status === 200) {
+        dispatch({
+          type: actions.singleblog.LIKE_BLOG_SUCCESS,
+          data: response.data,
+        });
+      }
+    } catch (error) {
+      dispatch({
+        type: actions.singleblog.LIKE_BLOG_ERROR,
+        error: error.message,
+      });
+    }
+  };
   const handleToggleFav = async () => {
     try {
       const response = await api.patch(
@@ -24,7 +43,6 @@ export default function SingleBlogAction() {
         });
       }
     } catch (error) {
-      console.error(error);
       dispatch({
         type: actions.singleblog.TOGGLE_FAVORITE_ERROR,
         error: error.message,
@@ -35,12 +53,14 @@ export default function SingleBlogAction() {
   return (
     <div className="floating-action">
       <ul className="floating-action-menus">
-        <li>
-          <img src={LikeIcon} alt="like" />
-          <span>{state?.blog?.likes?.length}</span>
-        </li>
+        <button onClick={handleLikeBlog}>
+          <li>
+            <img src={LikeIcon} alt="like" />
+            <span>{state?.blog?.likes?.length}</span>
+          </li>
+        </button>
 
-        <button onClick={handleToggleFav}>
+        <button className=" cursor-pointer" onClick={handleToggleFav}>
           <li>
             <img
               src={state?.blog?.isFavourite ? HeartFilled : HeartIcon}
