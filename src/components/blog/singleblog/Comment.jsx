@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { actions } from "../../../actions";
-import { DeleteIcon } from "../../../constans/image";
+import { DeleteIcon } from "../../../constants/image";
 import { useAuth, useAxios, useSingleBlog } from "../../../hooks";
 import { commentColor } from "../../../utils";
 

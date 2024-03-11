@@ -72,7 +72,24 @@ const singleBlogReducer = (state, action) => {
         error: action.error,
       };
     }
+    case actions.singleblog.TOGGLE_FAVORITE: {
+      return {
+        ...state,
+        loading: false,
+        blog: {
+          ...state.blog,
+          isFavourite: action.data.isFavourite,
+        },
+      };
+    }
 
+    case actions.singleblog.TOGGLE_FAVORITE_ERROR: {
+      return {
+        ...state,
+        loading: true,
+        error: action.error,
+      };
+    }
     default: {
       return state;
     }

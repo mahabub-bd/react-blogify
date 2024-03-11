@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { LogoImage, SearchIcon } from "../constans/image";
+import { LogoImage, SearchIcon } from "../constants/image";
 import { useAuth, useProfile } from "../hooks";
 import Logout from "./auth/Logout";
 

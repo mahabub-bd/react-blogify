@@ -7,8 +7,6 @@ export default function SingleBlogDetails() {
   const { state } = useSingleBlog();
   const { setAuthor } = useProfile();
 
-  state?.blog?.tags?.split(", ");
-
   return (
     <main>
       {/* <!-- Begin Blogs --> */}

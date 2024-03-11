@@ -15,7 +15,7 @@
       "email": "tapasadhikary@learnwithsumit.com",
       "firstName": "Tapas",
       "lastName": "Adhikary",
-      "avatar": "avatar-1710042148340-416724627.jpeg",
+      "avatar": "avatar-1708764766479-243448656.png",
       "bio": "Creating content is my passion. After spending over a decade in software engineering, I'm on a mission to make learning easy, and practical. I create written and video content on JavaScript, Web Development, Full Stack, and Career development.",
       "password": "$2b$08$p15BeTInMoszGTNI3gtwNu2XiSadWVdPXaxQPQy8XZd1jj/6yPQae",
       "favourites": []
@@ -40,6 +40,16 @@
       "password": "$2b$08$e9uY0ZjxXJ9F4r36Ln4oCu4nLZ92OKaQ466VEVDtxBPCs/JL/ChR.",
       "favourites": [
         {
+          "id": "4321b782f360f58c8c85",
+          "title": "Scope and Scope Chain in JavaScript",
+          "tags": "JavaScript, Async, Scope"
+        },
+        {
+          "id": "4321b782f360f58c8c88",
+          "title": "JSON Parse | Android | Java",
+          "tags": "android, java, kotlin, permission"
+        },
+        {
           "id": "7c12b4b48531bcc995ae",
           "title": "A guide to Prototype in JavaScript",
           "tags": "programming, algorithm, prototype, javascript"
@@ -51,29 +61,9 @@
       "email": "salahuddin@learnwithsumit.com",
       "firstName": "Md",
       "lastName": "salahuddin",
-      "avatar": "avatar-1710051051835-277291126.jpg",
-      "bio": "A Full Stack Web Application Developer from Bangladesh 🇧🇩 & a Programming Content Creator. Spend most of time coding outstanding projects or creating contents in youtube",
-      "password": "$2b$08$At/U5W1/ASt/F3zWCqOZnO75ftNVjwR.RVf0FEhEdQ0nHkll5tJ4m",
-      "favourites": []
-    },
-    {
-      "id": "842a7446ae9a5b6eb514",
-      "email": "neon@qpaybd.com.bd",
-      "firstName": "Khairul",
-      "lastName": "Islam Neon",
-      "avatar": "avatar-1710049173388-551076543.png",
-      "bio": "I am Neon from Dhaka",
-      "password": "$2b$08$gn0AWpSpyStzdFvom/RrZubJ99ShxR5xKlBIRx/mAdkMxM6J5uDEu",
-      "favourites": []
-    },
-    {
-      "id": "6db70c8eb149dd67fae1",
-      "email": "goutam@qpaybd.com.bd",
-      "firstName": "Goutam",
-      "lastName": "Fouzder",
-      "avatar": "avatar-1710066991431-924623001.jpg",
+      "avatar": "avatar-1708882452726-336021919.jpeg",
       "bio": "",
-      "password": "$2b$08$J5rPwsJCMeNpXv1UuZRr8uLWE4k2WtNCEOdXwF8VCUfHhf93hQ8Jy",
+      "password": "$2b$08$At/U5W1/ASt/F3zWCqOZnO75ftNVjwR.RVf0FEhEdQ0nHkll5tJ4m",
       "favourites": []
     }
   ],
@@ -133,43 +123,13 @@
           }
         },
         {
-          "id": "94f5fab7ced13aeb252c",
-          "content": "অনেক সুন্দর হয়েছে  ব্লগ টি ",
+          "id": "5cce158fde2755774a00",
+          "content": "অনেক সুন্দর হয়েছে",
           "author": {
-            "id": "65aff389f1822a5e9f43",
-            "firstName": "Md",
-            "lastName": "salahuddin",
-            "avatar": "avatar-1710051051835-277291126.jpg"
-          }
-        },
-        {
-          "id": "d74432db36700ca9ba91",
-          "content": "আমি JavaScript এর অনেক টিউটোরিয়াল দেখেছি অন্যান্য ভাইয়াদের channel থেকে। আমার মনে হয়, কিছু কিছু ভাইদের উদ্দেশ্য হয়তো বিগিনারদের ভীতু করা, ভাগিয়ে দেওয়া যে সহজ বিষয় কঠিন করে বুঝানো। আমি আপনার মধ্যে সেটা একদমই দেখি না। সত্যিকার অর্থে- আপনি একজন বিগিনারবান্ধব।। অসংখ্য ধন্যবাদ ভাইয়া আপনাকে।",
-          "author": {
-            "id": "65aff389f1822a5e9f43",
-            "firstName": "Md",
-            "lastName": "salahuddin",
-            "avatar": "avatar-1710051051835-277291126.jpg"
-          }
-        },
-        {
-          "id": "92854276eb95e7f99777",
-          "content": "অনেক সুন্দর ",
-          "author": {
-            "id": "65aff389f1822a5e9f43",
-            "firstName": "Md",
-            "lastName": "salahuddin",
-            "avatar": "avatar-1710051051835-277291126.jpg"
-          }
-        },
-        {
-          "id": "d4891b152d62d90ec7ca",
-          "content": "অনেক সুন্দর হয়েছে ব্লগ টি",
-          "author": {
-            "id": "6db70c8eb149dd67fae1",
-            "firstName": "Goutam",
-            "lastName": "Fouzder",
-            "avatar": "avatar-1710066991431-924623001.jpg"
+            "id": "3d2dde4b6548275fb066",
+            "firstName": "Saad",
+            "lastName": "Hasan",
+            "avatar": "avatar-1708764856675-623317122.jpg"
           }
         }
       ],
@@ -201,26 +161,6 @@
             "firstName": "Tapas",
             "lastName": "Adhikary",
             "avatar": "avatar-1708764766479-243448656.png"
-          }
-        },
-        {
-          "id": "e60119886d783e85f883",
-          "content": "অনেক সুন্দর হয়েছে",
-          "author": {
-            "id": "65aff389f1822a5e9f43",
-            "firstName": "Md",
-            "lastName": "salahuddin",
-            "avatar": "avatar-1710051051835-277291126.jpg"
-          }
-        },
-        {
-          "id": "a7a625d43910e09305d0",
-          "content": "অনেক সুন্দর হয়েছে\n",
-          "author": {
-            "id": "6db70c8eb149dd67fae1",
-            "firstName": "Goutam",
-            "lastName": "Fouzder",
-            "avatar": "avatar-1710066991431-924623001.jpg"
           }
         }
       ],
@@ -254,16 +194,6 @@
             "lastName": "Adhikary",
             "avatar": "avatar-1708764766479-243448656.png"
           }
-        },
-        {
-          "id": "d01469831aaa5a8fcb82",
-          "content": "অনেক সুন্দর হয়েছে",
-          "author": {
-            "id": "65aff389f1822a5e9f43",
-            "firstName": "Md",
-            "lastName": "salahuddin",
-            "avatar": "avatar-1710051051835-277291126.jpg"
-          }
         }
       ],
       "createdAt": "2024-02-24T09:01:37.581Z",
@@ -286,18 +216,7 @@
           "id": "346d7a36b3c41f3fbfa2"
         }
       ],
-      "comments": [
-        {
-          "id": "36ba5df60032081ccb26",
-          "content": "অনেক সুন্দর হয়েছে",
-          "author": {
-            "id": "6db70c8eb149dd67fae1",
-            "firstName": "Goutam",
-            "lastName": "Fouzder",
-            "avatar": "avatar-1710066991431-924623001.jpg"
-          }
-        }
-      ],
+      "comments": [],
       "createdAt": "2024-02-24T09:01:37.581Z",
       "isFavourite": false
     },
@@ -372,18 +291,7 @@
       },
       "tags": "programming, algorithm, prototype, javascript",
       "likes": [],
-      "comments": [
-        {
-          "id": "84e1c8c84f36a0b40783",
-          "content": "ভাল ",
-          "author": {
-            "id": "6db70c8eb149dd67fae1",
-            "firstName": "Goutam",
-            "lastName": "Fouzder",
-            "avatar": null
-          }
-        }
-      ],
+      "comments": [],
       "createdAt": "2024-02-24T16:57:39.425Z"
     },
     {

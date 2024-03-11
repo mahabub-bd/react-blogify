@@ -1,19 +1,17 @@
 import { useEffect, useReducer } from "react";
 import { actions } from "../../actions";
 
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth, useAxios, useProfile, useSingleBlog } from "../../hooks";
+import { useNavigate } from "react-router-dom";
+import { useAuth, useAxios, useSingleBlog } from "../../hooks";
 import { favoriteReducer, initialState } from "../../reducers/FavouriteReducer";
 
 export default function FavouriteBlog() {
   const [state, dispatch] = useReducer(favoriteReducer, initialState);
-  const { setAuthor } = useProfile();
-
   const { setBlogId } = useSingleBlog();
   const navigate = useNavigate();
   const { api } = useAxios();
-  console.log(state);
   const { auth } = useAuth();
+  console.log(state?.blogs);
 
   useEffect(() => {
     dispatch({ type: actions.favourite.DATA_FETCHING });
@@ -43,8 +41,8 @@ export default function FavouriteBlog() {
 
   if (state?.loading) {
     return (
-      <div className="min-h-[740px] flex justify-center items-center">
-        Fetching Favourite Data ...
+      <div className="min-h-[740px] flex justify-center items-center sidebar-card">
+        Please Log in for see your Favourite Blog
       </div>
     );
   }
@@ -66,19 +64,10 @@ export default function FavouriteBlog() {
             <h3 className="text-slate-400 font-medium hover:text-slate-300 transition-all cursor-pointer">
               {blog?.title}
             </h3>
-            <p className="text-slate-600 text-sm ">
-              Write by
-              <Link
-                className="mx-1"
-                to="/author"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setAuthor(blog?.author?.id);
-                }}
-              >
-                {`${blog?.author?.firstName} ${blog?.author?.lastName}`}{" "}
-              </Link>
-              <span className="mx-1">·</span> {blog?.likes?.length} Likes
+            <p className="text-slate-600 text-sm">
+              {blog.tags?.split(", ").map((tag) => (
+                <span key={tag}> # {tag}</span>
+              ))}
             </p>
           </li>
         ))}

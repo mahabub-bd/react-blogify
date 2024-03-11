@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DeleteIcon, EditIcon, ThreeDotIcon } from "../../constans/image";
+import { DeleteIcon, EditIcon, ThreeDotIcon } from "../../constants/image";
 
 const BlogAction = ({ onDelete, blog }) => {
   const [showEdit, setShowEdit] = useState(false);

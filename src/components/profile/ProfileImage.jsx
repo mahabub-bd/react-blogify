@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { actions } from "../../actions";
 
-import { EditIcon } from "../../constans/image";
+import { EditIcon } from "../../constants/image";
 import { useAxios, useProfile } from "../../hooks";
 
 export default function ProfileImage({ avatar, fname, isAuthonicate }) {

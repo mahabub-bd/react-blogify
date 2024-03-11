@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { actions } from "../../actions";
-import { CheckedIcon, EditIcon } from "../../constans/image";
+import { CheckedIcon, EditIcon } from "../../constants/image";
 import { useAxios, useProfile } from "../../hooks";
 
 const Bio = ({ isAuthonicate }) => {
@@ -19,7 +19,6 @@ const Bio = ({ isAuthonicate }) => {
       );
 
       if (response.status === 200) {
-        console.log(response.data);
         dispatch({
           type: actions.profile.USER_DATA_EDITED,
           data: response.data,
@@ -27,7 +26,6 @@ const Bio = ({ isAuthonicate }) => {
       }
       setEditMode(false);
     } catch (error) {
-      console.error(error);
       dispatch({
         type: actions.profile.DATA_FETCH_ERROR,
         error: error.message,

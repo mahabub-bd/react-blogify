@@ -14,6 +14,7 @@ import CommentIcon from "../assets/icons/comment.svg";
 
 import LikeIcon from "../assets/icons/like.svg";
 
+import HeartFilled from "../assets/icons/heart-filled.svg";
 import HeartIcon from "../assets/icons/heart.svg";
 
 import CheckedIcon from "../assets/icons/check.svg";
@@ -23,6 +24,7 @@ export {
   CommentIcon,
   DeleteIcon,
   EditIcon,
+  HeartFilled,
   HeartIcon,
   LikeIcon,
   LogoImage,
