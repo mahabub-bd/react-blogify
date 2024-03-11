@@ -19,8 +19,13 @@ import HeartIcon from "../assets/icons/heart.svg";
 
 import CheckedIcon from "../assets/icons/check.svg";
 
+import TailwindThumb from "../assets/blogs/taiulwind-cn-thumb.jpg";
+
+import ClosedIcon from "../assets/icons/close.svg";
+
 export {
   CheckedIcon,
+  ClosedIcon,
   CommentIcon,
   DeleteIcon,
   EditIcon,
@@ -30,5 +35,6 @@ export {
   LogoImage,
   ReactRoadMap,
   SearchIcon,
+  TailwindThumb,
   ThreeDotIcon,
 };

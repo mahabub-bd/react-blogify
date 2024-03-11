@@ -1,3 +1,4 @@
+import SearchModal from "../components/modal/SearchModal";
 import Footer from "./Footer";
 import Header from "./Header";
 import LoginForm from "./auth/LoginForm";
@@ -6,7 +7,6 @@ import BlogBoard from "./blog/BlogBoard";
 import BlogList from "./blog/BlogList";
 import FavouriteBlog from "./blog/FavouriteBlog";
 import PopularBlog from "./blog/PopularBlog";
-
 import SingleBlogAction from "./blog/singleblog/SingleBlogAction";
 import SingleBlogDetails from "./blog/singleblog/SingleBlogDetails";
 
@@ -19,6 +19,7 @@ export {
   LoginForm,
   PopularBlog,
   RegisterForm,
+  SearchModal,
   SingleBlogAction,
   SingleBlogDetails,
 };

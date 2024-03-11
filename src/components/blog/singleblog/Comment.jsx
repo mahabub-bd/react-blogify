@@ -113,10 +113,25 @@ export default function Comment() {
           const commentBg = commentColor(index); // Define commentBg here
           return (
             <div key={comment.id} className="flex items-start space-x-4 my-8">
-              <div
-                className={` ${commentBg} avater-img bg-orange-600 text-white`}
-              >
-                <span>{comment?.author?.firstName?.charAt(0)}</span>
+              <div>
+                {comment?.author.avatar ? (
+                  <img
+                    className="w-10 rounded-full"
+                    src={`${
+                      import.meta.env.VITE_SERVER_BASE_URL
+                    }/uploads/avatar/${comment?.author.avatar}`}
+                    alt="avatar"
+                  />
+                ) : (
+                  <div
+                    className={`${commentBg} avater-img bg-orange-600 text-white`}
+                  >
+                    <span className="">{`${comment?.author.firstName.charAt(
+                      0
+                    )}`}</span>
+                    {/* <!-- User's first name initial --> */}
+                  </div>
+                )}
               </div>
               <div className="w-full">
                 <h5 className="text-slate-500 font-bold">

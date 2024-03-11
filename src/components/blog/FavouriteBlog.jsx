@@ -15,27 +15,25 @@ export default function FavouriteBlog() {
   useEffect(() => {
     dispatch({ type: actions.favourite.DATA_FETCHING });
     const fetchData = async () => {
-      try {
-        const response = await api.get(
-          `${import.meta.env.VITE_SERVER_BASE_URL}/blogs/favourites`
-        );
+      if (auth?.authToken) {
+        try {
+          const response = await api.get(
+            `${import.meta.env.VITE_SERVER_BASE_URL}/blogs/favourites`
+          );
 
-        dispatch({
-          type: actions.favourite.DATA_FETCHED,
-          data: response.data,
-        });
-      } catch (error) {
-        console.error("Error fetching blogs:", error);
-
-        dispatch({
-          type: actions.favourite.DATA_FETCHED_ERROR,
-          error: error.message,
-        });
+          dispatch({
+            type: actions.favourite.DATA_FETCHED,
+            data: response.data,
+          });
+        } catch (error) {
+          dispatch({
+            type: actions.favourite.DATA_FETCHED_ERROR,
+            error: error.message,
+          });
+        }
       }
     };
-    if (auth?.authToken) {
-      fetchData();
-    }
+    fetchData();
   }, [api, auth?.authToken]);
 
   if (state?.loading) {

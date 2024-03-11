@@ -11,8 +11,9 @@ export default function SingleBlogPage() {
   useEffect(() => {
     dispatch({ type: actions.singleblog.DATA_FETCHING });
     const fetchData = async () => {
+      dispatch({ type: actions.singleblog.DATA_FETCHING });
       try {
-        const response = await axios.get(
+        const response = await axios?.get(
           `${import.meta.env.VITE_SERVER_BASE_URL}/blogs/${blogId}`
         );
 
@@ -21,8 +22,6 @@ export default function SingleBlogPage() {
           data: response.data,
         });
       } catch (error) {
-        console.error("Error fetching blogs:", error);
-
         dispatch({
           type: actions.singleblog.DATA_FETCHED_ERROR,
           error: error.message,

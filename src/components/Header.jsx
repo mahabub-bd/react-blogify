@@ -34,13 +34,13 @@ export default function Header() {
             </li>
             {auth?.user && (
               <li>
-                <a
-                  href="./search.html"
+                <Link
+                  to="/search"
                   className="flex items-center gap-2 cursor-pointer"
                 >
                   <img src={SearchIcon} alt="Search" />
                   <span>Search</span>
-                </a>
+                </Link>
               </li>
             )}
             {auth?.user ? (

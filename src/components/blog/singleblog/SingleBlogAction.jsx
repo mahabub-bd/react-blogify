@@ -1,52 +1,65 @@
+import { toast } from "react-toastify";
 import { actions } from "../../../actions";
 import {
   CommentIcon,
   HeartFilled,
   HeartIcon,
   LikeIcon,
-} from "../../../constants/image"; // Corrected typo "constans" to "constants"
-import { useAxios, useSingleBlog } from "../../../hooks";
+} from "../../../constants/image";
+import { useAuth, useAxios, useSingleBlog } from "../../../hooks";
 
 export default function SingleBlogAction() {
   const { state, dispatch } = useSingleBlog();
   const { api } = useAxios();
+  const { auth } = useAuth();
 
   const handleLikeBlog = async () => {
-    try {
-      const response = await api.post(
-        `${import.meta.env.VITE_SERVER_BASE_URL}/blogs/${state?.blog?.id}/like`
-      );
+    if (auth?.authToken) {
+      try {
+        const response = await api.post(
+          `${import.meta.env.VITE_SERVER_BASE_URL}/blogs/${
+            state?.blog?.id
+          }/like`
+        );
 
-      if (response.status === 200) {
+        if (response.status === 200) {
+          dispatch({
+            type: actions.singleblog.LIKE_BLOG_SUCCESS,
+            data: response.data,
+          });
+        }
+      } catch (error) {
         dispatch({
-          type: actions.singleblog.LIKE_BLOG_SUCCESS,
-          data: response.data,
+          type: actions.singleblog.LIKE_BLOG_ERROR,
+          error: error.message,
         });
       }
-    } catch (error) {
-      dispatch({
-        type: actions.singleblog.LIKE_BLOG_ERROR,
-        error: error.message,
-      });
+    } else {
+      toast.error(`Please Login for Like`);
     }
   };
+
   const handleToggleFav = async () => {
-    try {
-      const response = await api.patch(
-        `http://localhost:3000/blogs/${state?.blog?.id}/favourite`
-      );
-      console.log(response.data);
-      if (response.status === 200) {
+    if (auth?.authToken) {
+      try {
+        const response = await api.patch(
+          `http://localhost:3000/blogs/${state?.blog?.id}/favourite`
+        );
+        console.log(response.data);
+        if (response.status === 200) {
+          dispatch({
+            type: actions.singleblog.TOGGLE_FAVORITE,
+            data: response.data,
+          });
+        }
+      } catch (error) {
         dispatch({
-          type: actions.singleblog.TOGGLE_FAVORITE,
-          data: response.data,
+          type: actions.singleblog.TOGGLE_FAVORITE_ERROR,
+          error: error.message,
         });
       }
-    } catch (error) {
-      dispatch({
-        type: actions.singleblog.TOGGLE_FAVORITE_ERROR,
-        error: error.message,
-      });
+    } else {
+      toast.error(`Please Login for Favorite Change`);
     }
   };
 
@@ -69,7 +82,7 @@ export default function SingleBlogAction() {
           </li>
         </button>
 
-        <a href="#comments">
+        <a id="comments">
           <li>
             <img src={CommentIcon} alt="Comments" />
             <span>{state?.blog?.comments?.length}</span>

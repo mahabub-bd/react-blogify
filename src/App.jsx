@@ -5,6 +5,7 @@ import HomePage from "./page/HomePage";
 import LoginPage from "./page/LoginPage";
 import ProfilePage from "./page/ProfilePage";
 import RegisterPage from "./page/Register";
+import SearchPage from "./page/SearchPage";
 import SingleBlogPage from "./page/SingleBlogPage";
 import PrivateRoutes from "./routes/PrivateRoutes";
 import PublicRoutes from "./routes/Routes";
@@ -17,9 +18,9 @@ function App() {
           <Route element={<HomePage />} path="/" />
           <Route element={<LoginPage />} path="/login" />
           <Route element={<RegisterPage />} path="/register" />
-
           <Route element={<AuthorPage />} path="/author" />
           <Route element={<SingleBlogPage />} path="/singleblog" />
+          <Route element={<SearchPage />} path="/search" />
         </Route>
         <Route element={<PrivateRoutes />}>
           <Route element={<CreateBlog />} path="/createblog" />

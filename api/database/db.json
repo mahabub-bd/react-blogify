@@ -64,7 +64,34 @@
       "avatar": "avatar-1708882452726-336021919.jpeg",
       "bio": "",
       "password": "$2b$08$At/U5W1/ASt/F3zWCqOZnO75ftNVjwR.RVf0FEhEdQ0nHkll5tJ4m",
-      "favourites": []
+      "favourites": [
+        {
+          "id": "4321b782f360f58c8c86",
+          "title": "এন্ড্রয়েড পার্মিশন",
+          "tags": "android, java, kotlin, permission"
+        },
+        {
+          "id": "7c12b4b48531bcc995ae",
+          "title": "A guide to Prototype in JavaScript",
+          "tags": "programming, algorithm, prototype, javascript"
+        }
+      ]
+    },
+    {
+      "id": "6aea6cd3e53073d57963",
+      "email": "goutam@qpaybd.com.bd",
+      "firstName": "Goutam",
+      "lastName": "Fouzder",
+      "avatar": "avatar-1710127174613-641124440.png",
+      "bio": "",
+      "password": "$2b$08$1KZO/u0kRtX8WVPnbLJsbetGY1MRD0UDEhbgMbifMXMXqiBdExiGe",
+      "favourites": [
+        {
+          "id": "7c12b4b48531bcc995ae",
+          "title": "A guide to Prototype in JavaScript",
+          "tags": "programming, algorithm, prototype, javascript"
+        }
+      ]
     }
   ],
   "blogs": [
@@ -88,10 +115,13 @@
           "id": "f810ae24754a6cdc6d01"
         },
         {
-          "id": "65aff389f1822a5e9f43"
+          "id": "3d2dde4b6548275fb066"
         },
         {
-          "id": "3d2dde4b6548275fb066"
+          "id": "6aea6cd3e53073d57963"
+        },
+        {
+          "id": "65aff389f1822a5e9f43"
         }
       ],
       "comments": [
@@ -133,6 +163,36 @@
             "firstName": "Saad",
             "lastName": "Hasan",
             "avatar": "avatar-1708764856675-623317122.jpg"
+          }
+        },
+        {
+          "id": "0654dee8b5087ff98249",
+          "content": "অনেক সুন্দর হয়েছে",
+          "author": {
+            "id": "6aea6cd3e53073d57963",
+            "firstName": "Goutam",
+            "lastName": "Fouzder",
+            "avatar": null
+          }
+        },
+        {
+          "id": "373d0a46f965483a447e",
+          "content": "অনেক সুন্দর হয়েছে",
+          "author": {
+            "id": "65aff389f1822a5e9f43",
+            "firstName": "Md",
+            "lastName": "salahuddin",
+            "avatar": "avatar-1708882452726-336021919.jpeg"
+          }
+        },
+        {
+          "id": "1f5bffd0ca3c2f6b7920",
+          "content": "আমি JavaScript এর অনেক টিউটোরিয়াল দেখেছি অন্যান্য ভাইয়াদের channel থেকে। আমার মনে হয়, কিছু কিছু ভাইদের উদ্দেশ্য হয়তো বিগিনারদের ভীতু করা, ভাগিয়ে দেওয়া যে সহজ বিষয় কঠিন করে বুঝানো। আমি আপনার মধ্যে সেটা একদমই দেখি না। সত্যিকার অর্থে- আপনি একজন বিগিনারবান্ধব।। অসংখ্য ধন্যবাদ ভাইয়া আপনাকে।",
+          "author": {
+            "id": "65aff389f1822a5e9f43",
+            "firstName": "Md",
+            "lastName": "salahuddin",
+            "avatar": "avatar-1708882452726-336021919.jpeg"
           }
         }
       ],
@@ -185,6 +245,9 @@
       "likes": [
         {
           "id": "346d7a36b3c41f3fbfa2"
+        },
+        {
+          "id": "65aff389f1822a5e9f43"
         }
       ],
       "comments": [

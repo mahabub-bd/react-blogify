@@ -48,7 +48,7 @@ const BlogCard = ({ blog }) => {
   return (
     <div
       className="blog-card cursor-pointer"
-      onClick={() => handleSingleBlogDetails(blog.id)}
+      onClick={() => handleSingleBlogDetails(blog?.id)}
     >
       <img
         className="blog-thumb"
