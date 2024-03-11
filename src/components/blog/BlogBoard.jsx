@@ -23,8 +23,6 @@ const BlogBoard = () => {
           data: response.data,
         });
       } catch (error) {
-        console.error("Error fetching blogs:", error);
-
         dispatch({
           type: actions.blog.DATA_FETCHED_ERROR,
           error: error.message,

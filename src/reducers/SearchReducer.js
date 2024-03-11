@@ -6,34 +6,28 @@ const initialState = {
   error: null,
 };
 
-const searchReducer = (state = initialState, action) => {
+const searchReducer = (state, action) => {
   switch (action.type) {
-    case actions.search.DATA_FETCHING: {
+    case actions.search.DATA_FETCHING:
       return {
         ...state,
         loading: true,
+        error: null,
       };
-    }
-
     case actions.search.DATA_FETCHED:
       return {
         ...state,
         loading: false,
-        blogs: action.data.data,
+        blogs: action.data,
       };
-
-    case actions.search.DATA_FETCHED_ERROR: {
+    case actions.search.DATA_FETCH_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error,
       };
-    }
-
-    default: {
+    default:
       return state;
-    }
   }
 };
-
 export { initialState, searchReducer };

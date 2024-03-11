@@ -35,7 +35,7 @@ export default function SingleBlogAction() {
         });
       }
     } else {
-      toast.error(`Please Login for Like`);
+      toast.error(`Need Login for Like`);
     }
   };
 
@@ -59,7 +59,7 @@ export default function SingleBlogAction() {
         });
       }
     } else {
-      toast.error(`Please Login for Favorite Change`);
+      toast.error(`Need Login for Favorite Change`);
     }
   };
 

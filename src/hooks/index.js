@@ -4,7 +4,7 @@ import { useBlog } from "./useBlog";
 import { useProfile } from "./useProfile";
 import { useSingleBlog } from "./useSingleBlog";
 
-import useDebounce from "./useDebounce";
+import { useDebounce } from "./useDebounce";
 import { usePortal } from "./usePortal";
 
 export {

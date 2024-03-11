@@ -30,14 +30,14 @@ const BlogCard = ({ blog }) => {
       );
 
       dispatch({
-        type: actions.blog.DELETE_BLOG_SUCCESS,
+        type: actions.blog.DELETE_SUCCESS,
         blogId: blogId,
       });
     } catch (error) {
       console.error("Error deleting blog:", error);
 
       dispatch({
-        type: actions.blog.DELETE_BLOG_FAILURE,
+        type: actions.blog.DELETE_FAILURE,
         error: error.message,
       });
     }

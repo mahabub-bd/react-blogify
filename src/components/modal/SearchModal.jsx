@@ -1,17 +1,19 @@
 import ReactDOM from "react-dom";
 
 import { BlogBoard } from "..";
-import { ClosedIcon, TailwindThumb } from "../../constants/image";
+import { ClosedIcon } from "../../constants/image";
 import { usePortal } from "../../hooks";
+import Searchcard from "./SearchCard";
 
 export default function SearchModal({
   searchValue,
   onSearch,
   blogs,
   onModalClosed,
+  loading,
 }) {
   const portalContainer = usePortal();
-  console.log(blogs);
+
   return (
     <>
       {portalContainer &&
@@ -38,26 +40,17 @@ export default function SearchModal({
                 <h3 className="text-slate-400 font-bold mt-6">
                   Search Results
                 </h3>
-                <div className="my-4 divide-y-2 divide-slate-500/30 max-h-[440px] overflow-y-scroll overscroll-contain">
-                  {blogs?.map((blog) => (
-                    <div key={blog.id} className="flex gap-6 py-2">
-                      <img
-                        className="h-28 object-contain"
-                        src={TailwindThumb}
-                        alt="search"
-                      />
-                      <div className="mt-2">
-                        <h3 className="text-slate-300 text-xl font-bold">
-                          {blog?.title}
-                        </h3>
-                        {/* <!-- Meta Informations --> */}
-                        <p className="mb-6 text-sm text-slate-500 mt-1">
-                          {blog?.content}
-                        </p>
-                      </div>
+                {loading ? (
+                  <h1>Loading Search Data</h1>
+                ) : (
+                  <div className="my-4 divide-y-2 divide-slate-500/30 max-h-[440px] overflow-y-scroll overscroll-contain">
+                    <div className="my-4 divide-y-2 divide-slate-500/30 max-h-[440px] overflow-y-scroll overscroll-contain">
+                      {blogs?.data?.map((blog) => (
+                        <Searchcard key={blog.id} blog={blog} />
+                      ))}
                     </div>
-                  ))}
-                </div>
+                  </div>
+                )}
               </div>
 
               <button onClick={onModalClosed}>
