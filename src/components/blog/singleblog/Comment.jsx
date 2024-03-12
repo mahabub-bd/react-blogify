@@ -49,8 +49,6 @@ export default function Comment() {
         commentId: commentId,
       });
     } catch (error) {
-      console.error("Error deleting blog:", error);
-
       dispatch({
         type: actions.singleblog.COMMENT_DELETE_ERROR,
         error: error.message,

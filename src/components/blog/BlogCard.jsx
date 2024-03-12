@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { actions } from "../../actions";
 import {
   useAuth,
@@ -24,6 +25,10 @@ const BlogCard = ({ blog }) => {
     setBlogId(blogId);
   };
 
+  const handleEditBlog = async (blogId, data) => {
+    navigate("/editblog", { state: data });
+  };
+
   const handleDeleteBlog = async (blogId) => {
     try {
       await api.delete(
@@ -34,6 +39,7 @@ const BlogCard = ({ blog }) => {
         type: actions.blog.DELETE_SUCCESS,
         blogId: blogId,
       });
+      toast.success("Blog Deleted Sucessfull");
     } catch (error) {
       console.error("Error deleting blog:", error);
 
@@ -113,7 +119,11 @@ const BlogCard = ({ blog }) => {
         </div>
 
         {editPermision && (
-          <BlogAction onDelete={handleDeleteBlog} blog={blog} />
+          <BlogAction
+            onDelete={handleDeleteBlog}
+            onedit={handleEditBlog}
+            blog={blog}
+          />
         )}
       </div>
     </div>

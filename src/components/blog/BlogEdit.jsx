@@ -1,28 +1,40 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import { actions } from "../../actions";
 import { useAxios, useBlog } from "../../hooks";
 import Field from "../common/Field";
 
-export default function BlogEntry() {
+export default function BlogEdit({ blog }) {
+  const fileUploaderRef = useRef();
   const { dispatch } = useBlog();
   const { api } = useAxios();
-  const fileUploaderRef = useRef();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
     setError,
+    setValue,
   } = useForm();
+
+  console.log(blog);
+
+  useEffect(() => {
+    if (blog) {
+      setValue("title", blog.title);
+      setValue("tags", blog.tags);
+      setValue("content", blog.content);
+    }
+  }, [blog, setValue]);
 
   const handleImageUpload = (event) => {
     event.preventDefault();
     fileUploaderRef.current.click();
   };
   const handleBlogSubmit = async (data) => {
+    console.log(data);
     dispatch({ type: actions.blog.DATA_FETCHING });
-
     try {
       const formData = new FormData();
       formData.append("title", data.title);
@@ -30,18 +42,19 @@ export default function BlogEntry() {
       formData.append("content", data.content);
       formData.append("thumbnail", fileUploaderRef.current.files[0]);
 
-      const response = await api.post(
-        `${import.meta.env.VITE_SERVER_BASE_URL}/blogs`,
+      const response = await api.patch(
+        `${import.meta.env.VITE_SERVER_BASE_URL}/blogs/${blog?.id}`,
         formData
       );
-      if (response.status === 201) {
-        dispatch({ type: actions.blog.DATA_CREATED, data: response.data });
+
+      if (response.status === 200) {
+        dispatch({ type: actions.blog.DATA_EDITED, data: response.data });
+
+        toast.success("Blog Edited Sucessfully");
       }
+      console.log(response);
     } catch (error) {
-      dispatch({
-        type: actions.blog.DATA_CREATED_FAILURE,
-        error: error.message,
-      });
+      dispatch({ type: actions.blog.DATA_EDITED_ERROR, error: error.message });
       setError("root.random", {
         type: "random",
         message: `Something went wrong`,
@@ -120,7 +133,7 @@ export default function BlogEntry() {
               </Field>
               <button type="submit">
                 <a className="bg-indigo-600 text-white px-6 py-2 md:py-3 rounded-md hover:bg-indigo-700 transition-all duration-200">
-                  Create Blog
+                  Update Blog
                 </a>
               </button>
             </form>

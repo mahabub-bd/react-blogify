@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { DeleteIcon, EditIcon, ThreeDotIcon } from "../../constants/image";
 
-const BlogAction = ({ onDelete, blog }) => {
+const BlogAction = ({ onDelete, onedit, blog }) => {
   const [showEdit, setShowEdit] = useState(false);
 
   return (
@@ -19,7 +19,13 @@ const BlogAction = ({ onDelete, blog }) => {
 
       {showEdit && (
         <div className="action-modal-container">
-          <button className="action-menu-item hover:text-lwsGreen">
+          <button
+            onClick={(e) => {
+              onedit(blog?.id, blog);
+              e.stopPropagation();
+            }}
+            className="action-menu-item hover:text-lwsGreen"
+          >
             <img src={EditIcon} alt="Edit" />
             Edit
           </button>

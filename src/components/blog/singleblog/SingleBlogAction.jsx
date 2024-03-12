@@ -45,7 +45,7 @@ export default function SingleBlogAction() {
         const response = await api.patch(
           `http://localhost:3000/blogs/${state?.blog?.id}/favourite`
         );
-        console.log(response.data);
+
         if (response.status === 200) {
           dispatch({
             type: actions.singleblog.TOGGLE_FAVORITE,

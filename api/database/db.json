@@ -79,6 +79,11 @@
           "id": "7c12b4b48531bcc995ae",
           "title": "A guide to Prototype in JavaScript",
           "tags": "programming, algorithm, prototype, javascript"
+        },
+        {
+          "id": "d12ac171da923c9bd144",
+          "title": "Update",
+          "tags": "React , Java"
         }
       ]
     },
@@ -115,6 +120,27 @@
         {
           "id": "4321b782f360f58c8c86",
           "title": "এন্ড্রয়েড পার্মিশন",
+          "tags": "android, java, kotlin, permission"
+        }
+      ]
+    },
+    {
+      "id": "a1842be644edd4b1e58d",
+      "email": "neon@qpaybd.com.bd",
+      "firstName": "Khairul",
+      "lastName": "Hossain",
+      "avatar": null,
+      "bio": "I am Khirul Hasan",
+      "password": "$2b$08$GjsDU0iyJTbk3aTM9sFg7uuQZddNBNPuYYMUlVvZBj1o8W8EZQ/ie",
+      "favourites": [
+        {
+          "id": "2fdf675e5a693f7610a3",
+          "title": "Travel in India",
+          "tags": "Kolkata, Dhaka"
+        },
+        {
+          "id": "4321b782f360f58c8c88",
+          "title": "JSON Parse | Android | Java",
           "tags": "android, java, kotlin, permission"
         }
       ]
@@ -298,6 +324,26 @@
       "createdAt": "2024-03-12T00:51:08.702Z"
     },
     {
+      "id": "2fdf675e5a693f7610a3",
+      "title": "undefined",
+      "content": "undefined",
+      "thumbnail": "thumbnail-1710234561905-999018386.avif",
+      "author": {
+        "id": "a1842be644edd4b1e58d",
+        "firstName": "Khairul",
+        "lastName": "Hossain",
+        "avatar": null
+      },
+      "tags": "undefined",
+      "likes": [
+        {
+          "id": "a1842be644edd4b1e58d"
+        }
+      ],
+      "comments": [],
+      "createdAt": "2024-03-12T09:05:16.169Z"
+    },
+    {
       "id": "9d5598ab44600a379103",
       "title": "Dev Retro 2022: What made me a better developer this year?",
       "content": "Writing about the Dev Retro 2022 will be a bit off track if I do not discuss the journey briefly before it, which shaped my career as a blogger. The year 2021 was about writing. Writing here on my blog, freeCodeCamp, CSS-Tricks, Dev, and many other platforms.\n\nAt the end of 2021, I could establish myself as a technology blogger on the prominent platforms mentioned. The most exciting fact was that I was one of the top contributors/most-read authors on all these platforms.\n\nWhile these achievements were immense, I was still wondering about doing something else, trying something different in 2022. To be honest, I was trying to put myself out of my comfort zone, banking on all experiences I've gained over the years.\n\nThis article captures my journey of becoming a better developer this year. I hope it inspires you somehow, and if it does, I'll appreciate you leaving a comment. Also, for some of you who are part of this journey, I want to thank you from the bottom of my heart ❤️.",
@@ -371,6 +417,22 @@
         }
       ],
       "createdAt": "2024-03-11T23:44:54.269Z"
+    },
+    {
+      "id": "96e2313da13f8da6cad9",
+      "title": "Infini INBOOK",
+      "content": "How to Get Last Element in an Array in JavaScript?",
+      "thumbnail": "thumbnail-1710227779234-529818944.avif",
+      "author": {
+        "id": "65aff389f1822a5e9f43",
+        "firstName": "Md",
+        "lastName": "salahuddin",
+        "avatar": "avatar-1708882452726-336021919.jpeg"
+      },
+      "tags": "Next JS, React",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-12T07:16:19.252Z"
     }
   ]
 }
