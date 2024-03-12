@@ -9,6 +9,7 @@ import {
 } from "../../hooks";
 import { formatDate } from "../../utils";
 import BlogAction from "./BlogAction";
+const placeholderImageUrl = `https://via.placeholder.com/350x200/000000/FFFFFF`;
 
 const BlogCard = ({ blog }) => {
   const { auth } = useAuth();
@@ -50,11 +51,19 @@ const BlogCard = ({ blog }) => {
       className="blog-card cursor-pointer"
       onClick={() => handleSingleBlogDetails(blog?.id)}
     >
-      <img
-        className="blog-thumb"
-        src={`http://localhost:3000/uploads/blog/${blog?.thumbnail}`}
-        alt="Blog_Template"
-      />
+      {blog?.thumbnail ? (
+        <img
+          className="blog-thumb"
+          src={`http://localhost:3000/uploads/blog/${blog?.thumbnail}`}
+          alt="Blog_Template"
+        />
+      ) : (
+        <img
+          className="blog-thumb"
+          src={placeholderImageUrl}
+          alt="Blog_Template"
+        />
+      )}
 
       <div className="mt-2 relative">
         <h3 className="text-slate-300 text-xl lg:text-2xl">

@@ -21,6 +21,7 @@ import CheckedIcon from "../assets/icons/check.svg";
 
 import TailwindThumb from "../assets/blogs/taiulwind-cn-thumb.jpg";
 
+import DummyImage from "../assets/blogs/dummyImage.png";
 import ClosedIcon from "../assets/icons/close.svg";
 
 export {
@@ -28,6 +29,7 @@ export {
   ClosedIcon,
   CommentIcon,
   DeleteIcon,
+  DummyImage,
   EditIcon,
   HeartFilled,
   HeartIcon,

@@ -11,7 +11,7 @@ export default function Field({ label, children, htmlFor, error }) {
       )}
       {children}
       {!!error && (
-        <div role="alert" className="text-rose-600">
+        <div role="alert" className="text-rose-600 mt-2">
           {error.message}
         </div>
       )}
