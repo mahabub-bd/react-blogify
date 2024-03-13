@@ -8,18 +8,24 @@ import BlogList from "./BlogList";
 const BlogBoard = () => {
   const { state, dispatch } = useBlog();
   const [showBlog, setShowBlog] = useState(4);
+  const [hasMore, setHasMore] = useState(true);
   const loaderRef = useRef(null);
-  console.log(loaderRef);
 
   useEffect(() => {
-    dispatch({ type: actions.blog.DATA_FETCHING });
     const fetchData = async () => {
       try {
+        dispatch({ type: actions.blog.DATA_FETCHING });
         const response = await axios.get(
           `${
             import.meta.env.VITE_SERVER_BASE_URL
           }/blogs?limit=${showBlog}&page=1`
         );
+
+        if (response?.data?.blogs?.length < showBlog) {
+          setHasMore(false);
+        } else {
+          setShowBlog((prev) => prev + 4);
+        }
 
         dispatch({
           type: actions.blog.DATA_FETCHED,
@@ -33,15 +39,34 @@ const BlogBoard = () => {
       }
     };
 
-    fetchData();
-  }, [dispatch]);
+    const onIntersection = (items) => {
+      const loaderItem = items[0];
+      if (loaderItem.isIntersecting && hasMore) {
+        fetchData();
+      }
+    };
 
-  if (state.loading) {
+    const observer = new IntersectionObserver(onIntersection);
+
+    if (observer && loaderRef.current) {
+      observer.observe(loaderRef.current);
+    }
+
+    return () => {
+      if (observer) observer.disconnect();
+    };
+  }, [showBlog, hasMore, dispatch]);
+
+  if (state?.loading) {
     return (
       <div className="min-h-[740px] flex justify-center items-center">
         Fetching Loading Blog Data ...
       </div>
     );
+  }
+
+  if (state?.error) {
+    return <div> Error in fetching Blogs{state?.error?.message}</div>;
   }
   return (
     <main>
@@ -56,9 +81,16 @@ const BlogBoard = () => {
               <FavouriteBlog />
             </div>
           </div>
-          <div ref={loaderRef} className="text-center mt-5">
-            Load More Blog....
-          </div>
+          {hasMore ? (
+            <div ref={loaderRef} className="text-center mt-5">
+              Load More Blog....
+            </div>
+          ) : (
+            <div className="border border-blue-400 bg-opacity-20 p-4 text-center mt-5">
+              {" "}
+              All blogs are gone, there are no more blogs on the server
+            </div>
+          )}
         </div>
       </section>
     </main>

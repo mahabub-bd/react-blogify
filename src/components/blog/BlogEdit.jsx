@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
-import { toast } from "react-toastify";
 import { actions } from "../../actions";
 import { useAxios, useBlog } from "../../hooks";
 import Field from "../common/Field";
@@ -49,8 +48,6 @@ export default function BlogEdit({ blog }) {
 
       if (response.status === 200) {
         dispatch({ type: actions.blog.DATA_EDITED, data: response.data });
-
-        toast.success("Blog Edited Sucessfully");
       }
       console.log(response);
     } catch (error) {

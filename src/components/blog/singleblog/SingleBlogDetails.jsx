@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import { Link } from "react-router-dom";
 import { useProfile, useSingleBlog } from "../../../hooks";
 import { formatDate } from "../../../utils";
@@ -62,9 +63,13 @@ export default function SingleBlogDetails() {
               <li key={tag}>{tag.toUpperCase()}</li>
             ))}
           </ul>
-          <div className="mx-auto w-full md:w-10/12 text-slate-300 text-base md:text-lg leading-8 py-2 !text-left">
-            {blog.content}
-          </div>
+
+          <div
+            className="mx-auto w-full md:w-10/12 text-slate-300 text-base md:text-lg leading-8 py-2 !text-left"
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(blog?.content),
+            }}
+          ></div>
         </div>
       </section>
       <Comment />

@@ -1,13 +1,18 @@
 import { useRef } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { actions } from "../../actions";
-import { useAxios, useBlog } from "../../hooks";
+import { useAxios, useBlog, useSingleBlog } from "../../hooks";
 import Field from "../common/Field";
 
 export default function BlogEntry() {
-  const { dispatch } = useBlog();
+  const { dispatch, state } = useBlog();
   const { api } = useAxios();
   const fileUploaderRef = useRef();
+  const navigate = useNavigate();
+  const { setBlogId } = useSingleBlog;
+
+  const lastID = state?.blogs[state?.blogs.length - 1]?.id;
 
   const {
     register,
@@ -36,6 +41,8 @@ export default function BlogEntry() {
       );
       if (response.status === 201) {
         dispatch({ type: actions.blog.DATA_CREATED, data: response.data });
+        setBlogId(lastID);
+        navigate("/singleblog");
       }
     } catch (error) {
       dispatch({
