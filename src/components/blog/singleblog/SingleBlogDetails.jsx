@@ -13,6 +13,7 @@ export default function SingleBlogDetails() {
   }
 
   const { blog } = state;
+  const placeholderImageUrl = `https://via.placeholder.com/800x350/000000/FFFFFF`;
 
   const avatarUrl = blog.author.avatar
     ? `${import.meta.env.VITE_SERVER_BASE_URL}/uploads/avatar/${
@@ -52,11 +53,20 @@ export default function SingleBlogDetails() {
               {blog.likes?.length ?? 0} Likes
             </span>
           </div>
-          <img
-            className="mx-auto w-full md:w-8/12 object-cover h-80 md:h-96"
-            src={`http://localhost:3000/uploads/blog/${blog.thumbnail}`}
-            alt={blog.title}
-          />
+          {blog?.thumbnail ? (
+            <img
+              className="mx-auto w-full md:w-8/12 object-cover h-80 md:h-96"
+              src={`http://localhost:3000/uploads/blog/${blog?.thumbnail}`}
+              alt={blog.title}
+            />
+          ) : (
+            <img
+              className="mx-auto w-full md:w-8/12 object-cover h-80 md:h-96"
+              src={placeholderImageUrl}
+              alt={blog.title}
+            />
+          )}
+
           <ul className="tags">
             {/* Split tags and render them */}
             {blog.tags.split(", ").map((tag) => (

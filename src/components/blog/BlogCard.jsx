@@ -17,9 +17,9 @@ const BlogCard = ({ blog }) => {
   const { setAuthor } = useProfile();
   const navigate = useNavigate();
   const { setBlogId } = useSingleBlog();
-  const { dispatch } = useBlog();
+  const { dispatch, state } = useBlog();
   const { api } = useAxios();
-
+  console.log(blog?.thumbnail, state);
   const handleSingleBlogDetails = (blogId) => {
     navigate("/singleblog");
     setBlogId(blogId);
