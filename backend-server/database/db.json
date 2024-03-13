@@ -564,22 +564,6 @@
       "createdAt": "2024-03-13T06:29:36.360Z"
     },
     {
-      "id": "379eb2b552f93a7085cf",
-      "title": "undefined",
-      "content": "undefined",
-      "thumbnail": "thumbnail-1710312004086-573460723.avif",
-      "author": {
-        "id": "a1842be644edd4b1e58d",
-        "firstName": "Khairul",
-        "lastName": "Hossain",
-        "avatar": null
-      },
-      "tags": "undefined",
-      "likes": [],
-      "comments": [],
-      "createdAt": "2024-03-13T06:40:04.168Z"
-    },
-    {
       "id": "d6b5779868938912647d",
       "title": "Next JS",
       "content": "New Version Of Next JS is 14",
