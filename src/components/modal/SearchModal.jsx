@@ -11,6 +11,7 @@ export default function SearchModal({
   blogs,
   onModalClosed,
   loading,
+  error,
 }) {
   const portalContainer = usePortal();
 
@@ -40,17 +41,23 @@ export default function SearchModal({
                 <h3 className="text-slate-400 font-bold mt-6">
                   Search Results
                 </h3>
-                {loading ? (
-                  <h1>Loading Search Data</h1>
-                ) : (
-                  <div className="my-4 divide-y-2 divide-slate-500/30 max-h-[440px] overflow-y-scroll overscroll-contain">
+
+                {error && (
+                  <h2 className="mt-2 text-center">
+                    {" "}
+                    {`No results found  with ${searchValue}`}{" "}
+                  </h2>
+                )}
+                {loading && <h1>Loading Search Data</h1>}
+                <div className="my-4 divide-y-2 divide-slate-500/30 max-h-[440px] overflow-y-scroll overscroll-contain">
+                  {!error && (
                     <div className="my-4 divide-y-2 divide-slate-500/30 max-h-[440px] overflow-y-scroll overscroll-contain">
                       {blogs?.data?.map((blog) => (
                         <Searchcard key={blog.id} blog={blog} />
                       ))}
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
 
               <button onClick={onModalClosed}>

@@ -15,7 +15,7 @@ export default function SearchPage() {
     const value = event.target.value;
     setSearchTerm(value);
   };
-  console.log(state);
+
   const handleModalClosed = () => {
     navigate("/");
   };
@@ -29,7 +29,7 @@ export default function SearchPage() {
           const response = await api.get(
             `${import.meta.env.VITE_SERVER_BASE_URL}/search?q=${searchTerm}`
           );
-          console.log(response);
+
           dispatch({
             type: actions.search.DATA_FETCHED,
             data: response.data,

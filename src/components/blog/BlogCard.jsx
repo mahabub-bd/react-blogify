@@ -17,9 +17,9 @@ const BlogCard = ({ blog }) => {
   const { setAuthor } = useProfile();
   const navigate = useNavigate();
   const { setBlogId } = useSingleBlog();
-  const { dispatch, state } = useBlog();
+  const { dispatch } = useBlog();
   const { api } = useAxios();
-  console.log(blog?.thumbnail, state);
+
   const handleSingleBlogDetails = (blogId) => {
     navigate("/singleblog");
     setBlogId(blogId);
@@ -41,8 +41,6 @@ const BlogCard = ({ blog }) => {
       });
       toast.success("Blog Deleted Sucessfull");
     } catch (error) {
-      console.error("Error deleting blog:", error);
-
       dispatch({
         type: actions.blog.DELETE_FAILURE,
         error: error.message,
