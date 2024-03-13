@@ -66,7 +66,12 @@ const BlogBoard = () => {
   }
 
   if (state?.error) {
-    return <div> Error in fetching Blogs{state?.error?.message}</div>;
+    return (
+      <div className="text-center">
+        {" "}
+        Error in fetching Blogs{state?.error?.message}
+      </div>
+    );
   }
   return (
     <main>
