@@ -13,7 +13,6 @@ const RegisterForm = () => {
   } = useForm();
 
   const submitForm = async (formData) => {
-    console.log(formData);
     try {
       let response = await axios.post(
         `${import.meta.env.VITE_SERVER_BASE_URL}/auth/register`,
@@ -24,10 +23,9 @@ const RegisterForm = () => {
         navigate("/login");
       }
     } catch (error) {
-      console.error(error);
       setError("root.random", {
         type: "random",
-        message: `Something went wrong: ${error.message}`,
+        message: ` ${error.response.data.error} `,
       });
     }
   };
@@ -97,7 +95,7 @@ const RegisterForm = () => {
           Create Account
         </button>
       </Field>
-      <p className="text-gray-500 text-center">
+      <p className="text-gray-500 text-center ">
         {errors?.root?.random?.message}
       </p>
     </form>

@@ -21,15 +21,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         theme="dark"
         transition:Bounce
       />
-      <ProfileProvider>
-        <BlogProvider>
+      <BlogProvider>
+        <ProfileProvider>
           <SingleBlogProvider>
             <Router>
               <App />
             </Router>
           </SingleBlogProvider>
-        </BlogProvider>
-      </ProfileProvider>
+        </ProfileProvider>
+      </BlogProvider>
     </AuthProvider>
   </React.StrictMode>
 );

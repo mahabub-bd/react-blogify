@@ -45,7 +45,7 @@ const blogReducer = (state = initialState, action) => {
 
     case actions.blog.DELETE_SUCCESS: {
       const updatedBlogs = state.blogs.filter(
-        (blog) => blog.id !== action.blogId
+        (blog) => blog?.id !== action?.blogId
       );
       return {
         ...state,

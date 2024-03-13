@@ -15,7 +15,7 @@ export default function SearchPage() {
     const value = event.target.value;
     setSearchTerm(value);
   };
-
+  console.log(state);
   const handleModalClosed = () => {
     navigate("/");
   };
@@ -23,12 +23,13 @@ export default function SearchPage() {
   useEffect(() => {
     if (searchTerm.length > 0) {
       dispatch({ type: actions.search.DATA_FETCHING });
+
       const fetchData = async () => {
         try {
           const response = await api.get(
             `${import.meta.env.VITE_SERVER_BASE_URL}/search?q=${searchTerm}`
           );
-
+          console.log(response);
           dispatch({
             type: actions.search.DATA_FETCHED,
             data: response.data,
@@ -37,6 +38,7 @@ export default function SearchPage() {
           dispatch({
             type: actions.search.DATA_FETCH_ERROR,
             error: error.message,
+            length: length,
           });
         }
       };
@@ -47,7 +49,7 @@ export default function SearchPage() {
 
   return (
     <SearchModal
-      blogs={state?.blogs}
+      blogs={state?.data}
       loading={state.loading}
       error={state.error}
       onSearch={handleChange}

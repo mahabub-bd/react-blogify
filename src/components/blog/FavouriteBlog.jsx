@@ -38,7 +38,7 @@ export default function FavouriteBlog() {
 
   if (state?.loading) {
     return (
-      <div className="min-h-[740px] flex justify-center items-center sidebar-card">
+      <div className="min-h-[460px] flex justify-center items-center sidebar-card">
         Please Log in for see your Favourite Blog
       </div>
     );

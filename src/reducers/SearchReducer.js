@@ -18,7 +18,7 @@ const searchReducer = (state, action) => {
       return {
         ...state,
         loading: false,
-        blogs: action.data,
+        data: action.data,
       };
     case actions.search.DATA_FETCH_ERROR:
       return {

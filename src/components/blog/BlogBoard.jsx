@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { actions } from "../../actions";
 import { FavouriteBlog, PopularBlog } from "../../components";
 import { useBlog } from "../../hooks";
@@ -7,6 +7,9 @@ import BlogList from "./BlogList";
 
 const BlogBoard = () => {
   const { state, dispatch } = useBlog();
+  const [showBlog, setShowBlog] = useState(4);
+  const loaderRef = useRef(null);
+  console.log(loaderRef);
 
   useEffect(() => {
     dispatch({ type: actions.blog.DATA_FETCHING });
@@ -15,7 +18,7 @@ const BlogBoard = () => {
         const response = await axios.get(
           `${
             import.meta.env.VITE_SERVER_BASE_URL
-          }/blogs?limit=10&offset=0?page=1`
+          }/blogs?limit=${showBlog}&page=1`
         );
 
         dispatch({
@@ -52,6 +55,9 @@ const BlogBoard = () => {
               <PopularBlog />
               <FavouriteBlog />
             </div>
+          </div>
+          <div ref={loaderRef} className="text-center mt-5">
+            Load More Blog....
           </div>
         </div>
       </section>
