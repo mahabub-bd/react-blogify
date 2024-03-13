@@ -4,6 +4,7 @@ import CreateBlog from "./page/CreateBlog";
 import EditBlog from "./page/EditBlog";
 import HomePage from "./page/HomePage";
 import LoginPage from "./page/LoginPage";
+import NotFound from "./page/NotFound";
 import ProfilePage from "./page/ProfilePage";
 import RegisterPage from "./page/Register";
 import SearchPage from "./page/SearchPage";
@@ -22,6 +23,7 @@ function App() {
           <Route element={<AuthorPage />} path="/author" />
           <Route element={<SingleBlogPage />} path="/singleblog" />
           <Route element={<SearchPage />} path="/search" />
+          <Route element={<NotFound />} path="*" />
         </Route>
         <Route element={<PrivateRoutes />}>
           <Route element={<CreateBlog />} path="/createblog" />
