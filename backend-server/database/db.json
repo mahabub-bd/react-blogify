@@ -709,22 +709,6 @@
       "createdAt": "2024-03-13T10:51:31.195Z"
     },
     {
-      "id": "5befd08a9f3a4cc68f99",
-      "title": "Mahabub",
-      "content": "Mahabub",
-      "thumbnail": null,
-      "author": {
-        "id": "3d2dde4b6548275fb066",
-        "firstName": "Saad",
-        "lastName": "Hasan",
-        "avatar": "avatar-1710204436785-627839516.jpg"
-      },
-      "tags": "Mahabub",
-      "likes": [],
-      "comments": [],
-      "createdAt": "2024-03-13T12:48:38.012Z"
-    },
-    {
       "id": "de9b6ff10cec4d68b91b",
       "title": "Test 2",
       "content": "undefined",
@@ -771,6 +755,86 @@
       "likes": [],
       "comments": [],
       "createdAt": "2024-03-14T06:54:19.210Z"
+    },
+    {
+      "id": "a68619957a714edc6927",
+      "title": "Kolkata",
+      "content": "Kolkata Tour",
+      "thumbnail": null,
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1710204436785-627839516.jpg"
+      },
+      "tags": "Kolkata",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-14T09:53:24.985Z"
+    },
+    {
+      "id": "30802e1ff679b364d853",
+      "title": "undefined",
+      "content": "undefined",
+      "thumbnail": "thumbnail-1710410161853-198208492.jpg",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1710204436785-627839516.jpg"
+      },
+      "tags": "undefined",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-14T09:56:01.881Z"
+    },
+    {
+      "id": "8c58162a34fe86a430dc",
+      "title": "undefined",
+      "content": "undefined",
+      "thumbnail": "thumbnail-1710410429468-595227232.jpg",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1710204436785-627839516.jpg"
+      },
+      "tags": "undefined",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-14T10:00:29.523Z"
+    },
+    {
+      "id": "721e447921f557fe0ccf",
+      "title": "ChatGPT Vs Bard: Which is better for coding?",
+      "content": "The biggest difference between ChatGPT and Bard is the Large Language Models (LLMs) they are powered by. ChatGPT uses the Generative Pre-trained Transformer 4 (GPT-4), while Bard uses the Language Model for Dialogue Applications (LaMBDA). Also, ChatGPT is developed by OpenAI, while Bard was built by Google.\r\n\r\nIn terms of capabilities, both do very similar things. Programmers can use ChatGPT for:\r\nSuggestions: Both models can suggest the correct syntax and parameters for functions and other code constructs.\r\n\r\nCompletion: It can complete code that you have started writing.\r\n\r\nDebugging: It can help you identify errors and problems in your code.\r\n\r\nExplanation: It can explain the code that it generates, or code you input.\r\n\r\nBoth models were trained on a massive dataset, including Common Crawl, Wikipedia, books, articles, documents, and content scraped from the internet. However, Bard is a little different in that it was trained on conversations and dialogues from the web, while ChatGPT was trained mostly on scraped general content.\r\n\r\nBoth products are still under development, Bard a bit more so than ChatGPT. But to really show how these differences actually matter in a practical sense, here’s how they work when tested against each other.",
+      "thumbnail": "thumbnail-1710411447486-697877595.png",
+      "author": {
+        "id": "883d1c315241dff57044",
+        "firstName": "Mahabub ",
+        "lastName": "Hossain",
+        "avatar": null
+      },
+      "tags": "React,Next JS",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-14T10:17:27.531Z"
+    },
+    {
+      "id": "fb655514b83655ea5447",
+      "title": "Cloud computing challenges and opportunities for the public sector",
+      "content": "1. Security and compliance requirements\r\nWhether it’s HIPAA, PCI DSS, NIST, FedRAMP, or something else, security and compliance isn’t anything new for public sector organizations. No matter how familiar you are with various compliance frameworks, shifting to the cloud means navigating new regulations while ensuring security standards.\r\n\r\n2. Lack of cloud workers\r\nHistorically, the public sector has struggled to compete with the private sector for tech talent. And that hasn’t changed. \r\n\r\nEven as more tech talent enters the market (due to layoffs in the tech industry), government agencies struggle to recruit and retain cloud engineers. Why? Complex hiring processes, less competitive benefits, and lack of flexibility often top the list.\r\n\r\nBut legacy technology systems also present a substantial barrier. Many cloud workers want to stay on the cutting edge and lack the skills or desire to work with the legacy systems that pervade public sector organizations. \r\n\r\n>>> Check out these tips to fill your federal agency’s cloud computing jobs.\r\n\r\n3. Acquiring cloud services that meet public sector contract requirements\r\nCloud computing services use a pay-as-you-go pricing model. This lets agencies scale their cloud services up or down to meet their current needs. \r\n\r\nPublic sector organizations can use indefinite-delivery, indefinite-quantity (IDIQ) contracts to invest in metered services like cloud computing. However, these contracts are often time-consuming and costly to set up. \r\n\r\nEven if you’re able to navigate IDIQ contracts, your agency may face scrutiny about which cloud service providers you offer those contracts to.\r\n\r\n>>> Learn more about multicloud for public sector organizations.\r\n\r\n4. Legacy infrastructure spending\r\nPublic sector organizations, including the federal government, continue to prioritize legacy, on-premises systems despite the push to the cloud.\r\n\r\nIn fact, even though 54% of public sector CIOs said they’d increase cloud spend at the beginning of 2022, only 35% said they’d decrease spending on legacy infrastructure and data center technologies. As long as agencies continue to prioritize legacy systems, they won’t see full cloud transformation.\r\n\r\n7 cloud computing opportunities for public sector\r\nDespite the challenges, cloud computing still offers opportunities for public sector organizations to enhance their operations. If your agency can think beyond the technology itself to the people and processes that will manage it, you’ll see cloud success.\r\n\r\n1. Leverage a shared responsibility model\r\nCloud service providers use a shared responsibility model that defines which infrastructure responsibilities they own and which they leave to individual organizations. \r\n\r\nThese models can help you allocate resources more effectively. For example, if you aren’t responsible for managing the cloud’s software or hardware, you can dedicate more technologists to critical areas like cybersecurity.\r\n\r\nJust make sure you fully understand the shared responsibility model and what you and your cloud workers are responsible for.",
+      "thumbnail": "undefined",
+      "author": {
+        "id": "883d1c315241dff57044",
+        "firstName": "Mahabub ",
+        "lastName": "Hossain",
+        "avatar": null
+      },
+      "tags": "cloud",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-14T10:22:45.552Z"
     }
   ]
 }

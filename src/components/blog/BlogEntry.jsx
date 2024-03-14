@@ -17,17 +17,15 @@ export default function BlogEntry() {
     handleSubmit,
     formState: { errors },
     setError,
-    reset,
   } = useForm();
 
   const handleImageUpload = (event) => {
     event.preventDefault();
     fileUploaderRef.current.click();
   };
-  const handleBlogSubmit = async (data, event) => {
-    event.preventDefault();
+  const handleBlogSubmit = async (data) => {
     dispatch({ type: actions.blog.DATA_FETCHING });
-    reset();
+
     navigate("/singleblog");
 
     try {
@@ -35,21 +33,18 @@ export default function BlogEntry() {
       formData.append("title", data.title);
       formData.append("tags", data.tags);
       formData.append("content", data.content);
-
-      if (fileUploaderRef.current.files[0]) {
-        formData.append("thumbnail", fileUploaderRef.current.files[0]);
-      }
-
+      formData.append("thumbnail", fileUploaderRef.current.files[0]);
       const response = await api.post(
         `${import.meta.env.VITE_SERVER_BASE_URL}/blogs`,
         formData
       );
-
       setBlogId(response?.data?.blog?.id);
 
       if (response.status === 201) {
         dispatch({ type: actions.blog.DATA_CREATED, data: response.data });
       }
+
+      navigate("/singleblog");
     } catch (error) {
       dispatch({
         type: actions.blog.DATA_CREATED_FAILURE,
@@ -96,7 +91,6 @@ export default function BlogEntry() {
                     id="photo"
                     name="photo"
                     className="hidden"
-                    onChange={handleBlogSubmit}
                     ref={fileUploaderRef}
                   />
                 </div>

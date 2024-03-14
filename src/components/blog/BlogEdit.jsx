@@ -18,7 +18,6 @@ export default function BlogEdit({ blog }) {
     formState: { errors },
     setError,
     setValue,
-    reset,
   } = useForm();
 
   useEffect(() => {
@@ -26,6 +25,7 @@ export default function BlogEdit({ blog }) {
       setValue("title", blog.title);
       setValue("tags", blog.tags);
       setValue("content", blog.content);
+      setValue("thumbnail", blog.thumbnail);
     }
   }, [blog, setValue]);
 
@@ -33,11 +33,9 @@ export default function BlogEdit({ blog }) {
     event.preventDefault();
     fileUploaderRef.current.click();
   };
-  const handleBlogSubmit = async (data, event) => {
-    event.preventDefault();
+  const handleBlogSubmit = async (data) => {
     dispatch({ type: actions.blog.DATA_FETCHING });
-    reset();
-    navigate("/singleblog");
+
     try {
       const formData = new FormData();
       formData.append("title", data.title);
@@ -53,7 +51,7 @@ export default function BlogEdit({ blog }) {
       if (response.status === 200) {
         dispatch({ type: actions.blog.DATA_EDITED, data: response.data });
       }
-      console.log(response);
+      navigate("/singleblog");
     } catch (error) {
       dispatch({ type: actions.blog.DATA_EDITED_ERROR, error: error.message });
       setError("root.random", {
@@ -97,7 +95,6 @@ export default function BlogEdit({ blog }) {
                     id="photo"
                     name="photo"
                     className="hidden"
-                    onChange={handleBlogSubmit}
                     ref={fileUploaderRef}
                   />
                 </div>
