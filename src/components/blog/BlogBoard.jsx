@@ -24,7 +24,7 @@ const BlogBoard = () => {
         if (response?.data?.blogs?.length < showBlog) {
           setHasMore(false);
         } else {
-          setShowBlog((prev) => prev + 4);
+          setShowBlog((prev) => prev + 10);
         }
 
         dispatch({
@@ -68,7 +68,6 @@ const BlogBoard = () => {
   if (state?.error) {
     return (
       <div className="text-center">
-        {" "}
         Error in fetching Blogs{state?.error?.message}
       </div>
     );
@@ -91,8 +90,7 @@ const BlogBoard = () => {
               Load More Blog....
             </div>
           ) : (
-            <div className="border border-blue-400 bg-opacity-20 p-4 text-center mt-5">
-              {" "}
+            <div className="border rounded-lg border-gray-700 hover:border-blue-500 opacity-70 bg-opacity-20 p-4 text-center mt-5">
               All blogs are gone, there are no more blogs on the server
             </div>
           )}

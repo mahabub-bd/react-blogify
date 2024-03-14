@@ -465,6 +465,47 @@
       "createdAt": "2024-03-13T06:40:32.653Z"
     },
     {
+      "id": "07d2749c1b7a07669b76",
+      "title": "The best hate I got in 2016",
+      "content": "So pull up a chair, stay awhile.\r\n\r\nMy blog is a collection of anecdotes and adventures that will hopefully entertain and make you smile, and also not take life too seriously. But sometimes I also like to muse over the bigger questions, like why abbreviation is such a long word and what can I do to be a better human.\r\n\r\nI’ve got a decade worth of stories on here, many of which I haven’t looked at since clicking publish, so lord knows what kinds of goodies you might find on here if you start digging. No need to point out all my typos, thankyouverymuch.\r\n\r\nIn the meantime, if you want to catch up with me in real-time, follow me below and be sure to subscribe to my emails!",
+      "thumbnail": "thumbnail-1710244551580-411310584.jpg",
+      "author": {
+        "id": "883d1c315241dff57044",
+        "firstName": "Mahabub ",
+        "lastName": "Hossain",
+        "avatar": null
+      },
+      "tags": "web,react,javascript",
+      "likes": [
+        {
+          "id": "a1842be644edd4b1e58d"
+        }
+      ],
+      "comments": [
+        {
+          "id": "f5abee6dbdebc0245590",
+          "content": "Tiger ",
+          "author": {
+            "id": "a1842be644edd4b1e58d",
+            "firstName": "Khairul",
+            "lastName": "Hossain",
+            "avatar": null
+          }
+        },
+        {
+          "id": "d58c6dfb6cb3ac9d188b",
+          "content": "Wow",
+          "author": {
+            "id": "a1842be644edd4b1e58d",
+            "firstName": "Khairul",
+            "lastName": "Hossain",
+            "avatar": null
+          }
+        }
+      ],
+      "createdAt": "2024-03-12T11:55:51.589Z"
+    },
+    {
       "id": "9d5598ab44600a379103",
       "title": "Dev Retro 2022: What made me a better developer this year?",
       "content": "Writing about the Dev Retro 2022 will be a bit off track if I do not discuss the journey briefly before it, which shaped my career as a blogger. The year 2021 was about writing. Writing here on my blog, freeCodeCamp, CSS-Tricks, Dev, and many other platforms.\n\nAt the end of 2021, I could establish myself as a technology blogger on the prominent platforms mentioned. The most exciting fact was that I was one of the top contributors/most-read authors on all these platforms.\n\nWhile these achievements were immense, I was still wondering about doing something else, trying something different in 2022. To be honest, I was trying to put myself out of my comfort zone, banking on all experiences I've gained over the years.\n\nThis article captures my journey of becoming a better developer this year. I hope it inspires you somehow, and if it does, I'll appreciate you leaving a comment. Also, for some of you who are part of this journey, I want to thank you from the bottom of my heart ❤️.",
@@ -554,54 +595,6 @@
       "likes": [],
       "comments": [],
       "createdAt": "2024-03-12T07:16:19.252Z"
-    },
-    {
-      "id": "07d2749c1b7a07669b76",
-      "title": "The best hate I got in 2016",
-      "content": "So pull up a chair, stay awhile.\r\n\r\nMy blog is a collection of anecdotes and adventures that will hopefully entertain and make you smile, and also not take life too seriously. But sometimes I also like to muse over the bigger questions, like why abbreviation is such a long word and what can I do to be a better human.\r\n\r\nI’ve got a decade worth of stories on here, many of which I haven’t looked at since clicking publish, so lord knows what kinds of goodies you might find on here if you start digging. No need to point out all my typos, thankyouverymuch.\r\n\r\nIn the meantime, if you want to catch up with me in real-time, follow me below and be sure to subscribe to my emails!",
-      "thumbnail": "thumbnail-1710244551580-411310584.jpg",
-      "author": {
-        "id": "883d1c315241dff57044",
-        "firstName": "Mahabub ",
-        "lastName": "Hossain",
-        "avatar": null
-      },
-      "tags": "web,react,javascript",
-      "likes": [],
-      "comments": [],
-      "createdAt": "2024-03-12T11:55:51.589Z"
-    },
-    {
-      "id": "95a7faa3572974acc63c",
-      "title": "OPPOF19",
-      "content": "Content",
-      "thumbnail": "thumbnail-1710311200748-705299948.avif",
-      "author": {
-        "id": "a1842be644edd4b1e58d",
-        "firstName": "Khairul",
-        "lastName": "Hossain",
-        "avatar": null
-      },
-      "tags": "Next JS, React",
-      "likes": [],
-      "comments": [],
-      "createdAt": "2024-03-13T06:26:03.776Z"
-    },
-    {
-      "id": "94043f492a965d23c518",
-      "title": "undefined",
-      "content": "undefined",
-      "thumbnail": "thumbnail-1710311376267-387276228.avif",
-      "author": {
-        "id": "a1842be644edd4b1e58d",
-        "firstName": "Khairul",
-        "lastName": "Hossain",
-        "avatar": null
-      },
-      "tags": "undefined",
-      "likes": [],
-      "comments": [],
-      "createdAt": "2024-03-13T06:29:36.360Z"
     },
     {
       "id": "5bac6e07d6278139ad47",
