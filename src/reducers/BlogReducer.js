@@ -29,20 +29,21 @@ const blogReducer = (state = initialState, action) => {
         error: action.error,
       };
     }
-    case actions.blog.DATA_CREATED:
+    case actions.blog.DATA_CREATED: {
       return {
         ...state,
         loading: false,
         blogs: [...state.blogs, action.data.blogs],
       };
+    }
 
-    case actions.blog.DATA_EDITED:
+    case actions.blog.DATA_EDITED: {
       return {
         ...state,
         loading: false,
         blogs: [...state.blogs, action.data.blogs],
       };
-
+    }
     case actions.blog.DELETE_SUCCESS: {
       const updatedBlogs = state.blogs.filter(
         (blog) => blog?.id !== action?.blogId

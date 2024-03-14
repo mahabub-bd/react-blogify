@@ -16,9 +16,7 @@ export default function ProfileImage({ avatar, fname, isAuthonicate }) {
 
   const updateImageDisplay = async () => {
     const formData = new FormData();
-    for (const file of fileUploaderRef.current.files) {
-      formData.append("avatar", file);
-    }
+    formData.append("avatar", fileUploaderRef.current.files[0]);
 
     try {
       const response = await api.post(
