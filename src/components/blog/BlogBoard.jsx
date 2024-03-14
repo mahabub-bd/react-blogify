@@ -24,7 +24,7 @@ const BlogBoard = () => {
         if (response?.data?.blogs?.length < showBlog) {
           setHasMore(false);
         } else {
-          setShowBlog((prev) => prev + 1);
+          setShowBlog((prev) => prev + 5);
         }
 
         dispatch({
