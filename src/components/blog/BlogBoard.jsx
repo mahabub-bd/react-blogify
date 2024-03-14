@@ -15,6 +15,7 @@ const BlogBoard = () => {
     const fetchData = async () => {
       try {
         dispatch({ type: actions.blog.DATA_FETCHING });
+
         const response = await axios.get(
           `${
             import.meta.env.VITE_SERVER_BASE_URL

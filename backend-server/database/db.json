@@ -303,6 +303,16 @@
             "lastName": "Hossain",
             "avatar": null
           }
+        },
+        {
+          "id": "a1c2b5d635f954279b4a",
+          "content": "Onek ",
+          "author": {
+            "id": "883d1c315241dff57044",
+            "firstName": "Mahabub ",
+            "lastName": "Hossain",
+            "avatar": "avatar-1710413232728-249389255.png"
+          }
         }
       ],
       "createdAt": "2024-02-24T09:09:01.121Z"
@@ -534,7 +544,18 @@
       },
       "tags": "programming, algorithm, prototype, javascript",
       "likes": [],
-      "comments": [],
+      "comments": [
+        {
+          "id": "0ed48a18adab76e400f4",
+          "content": "Nice",
+          "author": {
+            "id": "883d1c315241dff57044",
+            "firstName": "Mahabub ",
+            "lastName": "Hossain",
+            "avatar": "avatar-1710413232728-249389255.png"
+          }
+        }
+      ],
       "createdAt": "2024-02-24T16:59:13.363Z"
     },
     {
