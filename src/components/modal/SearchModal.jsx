@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom";
 
+import { useEffect, useRef } from "react";
 import { BlogBoard } from "..";
 import { ClosedIcon } from "../../constants/image";
 import { usePortal } from "../../hooks";
@@ -14,6 +15,10 @@ export default function SearchModal({
   error,
 }) {
   const portalContainer = usePortal();
+  const searchRef = useRef(null);
+  useEffect(() => {
+    searchRef.current.focus();
+  });
 
   return (
     <>
@@ -29,6 +34,7 @@ export default function SearchModal({
                 </h3>
                 <input
                   type="text"
+                  ref={searchRef}
                   placeholder="Start Typing to Search"
                   value={searchValue}
                   onChange={onSearch}

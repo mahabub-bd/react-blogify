@@ -57,7 +57,7 @@ export default function Comment() {
   };
 
   return (
-    <section id="comments">
+    <section id="comment">
       <div className="mx-auto w-full md:w-10/12 container">
         <h2 className="text-2xl font-bold my-8">
           Comments{" "}

@@ -82,7 +82,7 @@ export default function SingleBlogAction() {
           </li>
         </button>
 
-        <a id="comments">
+        <a href="#comment">
           <li>
             <img src={CommentIcon} alt="Comments" />
             <span>{state?.blog?.comments?.length}</span>

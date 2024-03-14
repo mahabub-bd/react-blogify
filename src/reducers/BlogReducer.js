@@ -15,12 +15,13 @@ const blogReducer = (state = initialState, action) => {
       };
     }
 
-    case actions.blog.DATA_FETCHED:
+    case actions.blog.DATA_FETCHED: {
       return {
         ...state,
         loading: false,
         blogs: action.data.blogs,
       };
+    }
 
     case actions.blog.DATA_FETCHED_ERROR: {
       return {

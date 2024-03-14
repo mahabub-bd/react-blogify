@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { actions } from "../../actions";
 import { useAxios, useBlog, useSingleBlog } from "../../hooks";
 import Field from "../common/Field";
@@ -51,6 +52,7 @@ export default function BlogEdit({ blog }) {
       if (response.status === 200) {
         dispatch({ type: actions.blog.DATA_EDITED, data: response.data });
       }
+      toast.success("Blog Sucessfully Modified");
       navigate("/singleblog");
     } catch (error) {
       dispatch({ type: actions.blog.DATA_EDITED_ERROR, error: error.message });
