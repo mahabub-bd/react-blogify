@@ -74,7 +74,9 @@ const BlogCard = ({ blog }) => {
           <p>{blog?.title}</p>
         </h3>
 
-        <p className="mb-6 text-base text-slate-500 mt-1">{blog?.content}</p>
+        <p className="mb-6 text-base text-slate-500 mt-1 line-clamp-4">
+          {blog?.content}
+        </p>
 
         {/* <!-- Meta Informations --> */}
         <div className="flex justify-between items-center">

@@ -170,11 +170,6 @@
       "password": "$2b$08$GjsDU0iyJTbk3aTM9sFg7uuQZddNBNPuYYMUlVvZBj1o8W8EZQ/ie",
       "favourites": [
         {
-          "id": "2fdf675e5a693f7610a3",
-          "title": "Travel in India",
-          "tags": "Kolkata, Dhaka"
-        },
-        {
           "id": "4321b782f360f58c8c88",
           "title": "JSON Parse | Android | Java",
           "tags": "android, java, kotlin, permission"
@@ -183,6 +178,11 @@
           "id": "732ae97f6a8555d5eef9",
           "title": "USA Tour",
           "tags": "Beach , Data"
+        },
+        {
+          "id": "2fdf675e5a693f7610a3",
+          "title": "India Tour ",
+          "tags": "India"
         }
       ]
     }
@@ -321,10 +321,10 @@
       "tags": "India",
       "likes": [
         {
-          "id": "a1842be644edd4b1e58d"
+          "id": "883d1c315241dff57044"
         },
         {
-          "id": "883d1c315241dff57044"
+          "id": "a1842be644edd4b1e58d"
         }
       ],
       "comments": [

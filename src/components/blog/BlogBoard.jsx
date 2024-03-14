@@ -7,7 +7,7 @@ import BlogList from "./BlogList";
 
 const BlogBoard = () => {
   const { state, dispatch } = useBlog();
-  const [showBlog, setShowBlog] = useState(4);
+  const [showBlog, setShowBlog] = useState(10);
   const [hasMore, setHasMore] = useState(true);
   const loaderRef = useRef(null);
 
