@@ -846,6 +846,33 @@
         }
       ],
       "createdAt": "2024-03-14T10:22:45.552Z"
+    },
+    {
+      "id": "36c68f7db1570c8c235b",
+      "title": "Technologists need these essential skills for continuous improvement",
+      "content": "New tech advancements can leave you with a lot of questions. Are your current skills still relevant? What new skills do you need to learn? How can you meet your career goals in the ever-changing technology landscape?\r\n\r\nYou might not know the answers, but there is a way to set yourself up for success in the face of AI and other emerging technologies. From technical skills to professional skills and soft skills, we cover the essentials you need to adapt to new tech faster and solidify your career—no matter what the future holds.\r\n\r\nWant to learn more about our tech trends and predictions and what you need to succeed? Download the 2024 Tech Forecast.",
+      "thumbnail": "thumbnail-1710414819825-990073644.jpg",
+      "author": {
+        "id": "883d1c315241dff57044",
+        "firstName": "Mahabub ",
+        "lastName": "Hossain",
+        "avatar": "avatar-1710413232728-249389255.png"
+      },
+      "tags": "web,react,javascript",
+      "likes": [],
+      "comments": [
+        {
+          "id": "7b5ab828f39af7f73f94",
+          "content": "Nice",
+          "author": {
+            "id": "883d1c315241dff57044",
+            "firstName": "Mahabub ",
+            "lastName": "Hossain",
+            "avatar": "avatar-1710413232728-249389255.png"
+          }
+        }
+      ],
+      "createdAt": "2024-03-14T11:13:51.661Z"
     }
   ]
 }
