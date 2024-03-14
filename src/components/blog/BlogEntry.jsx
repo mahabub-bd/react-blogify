@@ -24,7 +24,8 @@ export default function BlogEntry() {
     event.preventDefault();
     fileUploaderRef.current.click();
   };
-  const handleBlogSubmit = async (data) => {
+  const handleBlogSubmit = async (data, event) => {
+    event.preventDefault();
     dispatch({ type: actions.blog.DATA_FETCHING });
     reset();
     navigate("/singleblog");

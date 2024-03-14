@@ -1,13 +1,16 @@
 import { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { actions } from "../../actions";
-import { useAxios, useBlog } from "../../hooks";
+import { useAxios, useBlog, useSingleBlog } from "../../hooks";
 import Field from "../common/Field";
 
 export default function BlogEdit({ blog }) {
   const fileUploaderRef = useRef();
   const { dispatch } = useBlog();
   const { api } = useAxios();
+  const { setBlogId } = useSingleBlog();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -15,9 +18,8 @@ export default function BlogEdit({ blog }) {
     formState: { errors },
     setError,
     setValue,
+    reset,
   } = useForm();
-
-  console.log(blog);
 
   useEffect(() => {
     if (blog) {
@@ -31,9 +33,11 @@ export default function BlogEdit({ blog }) {
     event.preventDefault();
     fileUploaderRef.current.click();
   };
-  const handleBlogSubmit = async (data) => {
-    console.log(data);
+  const handleBlogSubmit = async (data, event) => {
+    event.preventDefault();
     dispatch({ type: actions.blog.DATA_FETCHING });
+    reset();
+    navigate("/singleblog");
     try {
       const formData = new FormData();
       formData.append("title", data.title);
@@ -45,7 +49,7 @@ export default function BlogEdit({ blog }) {
         `${import.meta.env.VITE_SERVER_BASE_URL}/blogs/${blog?.id}`,
         formData
       );
-
+      setBlogId(response?.data?.blog?.id);
       if (response.status === 200) {
         dispatch({ type: actions.blog.DATA_EDITED, data: response.data });
       }
