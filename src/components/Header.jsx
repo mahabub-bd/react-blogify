@@ -5,7 +5,10 @@ import { useAuth, useProfile } from "../hooks";
 
 export default function Header() {
   const { auth } = useAuth();
-  const { showProfileModal, setShowProfileModal } = useProfile();
+  const { showProfileModal, setShowProfileModal, state } = useProfile();
+  const user = state?.user ?? auth?.user;
+
+  console.log(user);
 
   return (
     <header>
@@ -60,15 +63,13 @@ export default function Header() {
                   className="w-10 rounded-full"
                   src={`${
                     import.meta.env.VITE_SERVER_BASE_URL
-                  }/uploads/avatar/${auth.user.avatar}`}
+                  }/uploads/avatar/${user?.avatar}`}
                   alt="avatar"
                 />
               ) : (
                 auth.user && (
                   <div className="avater-img bg-orange-600 text-white">
-                    <span className="">{`${auth.user.firstName.charAt(
-                      0
-                    )}`}</span>
+                    <span className="">{`${user?.firstName?.charAt(0)}`}</span>
                     {/* <!-- User's first name initial --> */}
                   </div>
                 )
@@ -77,7 +78,7 @@ export default function Header() {
               {/* <!-- Logged-in user's name --> */}
               {auth?.user && (
                 <p>
-                  <span className="text-white ml-2">{`${auth?.user?.firstName} ${auth?.user?.lastName}`}</span>
+                  <span className="text-white ml-2">{`${user?.firstName} ${user?.lastName}`}</span>
                 </p>
               )}
             </li>
