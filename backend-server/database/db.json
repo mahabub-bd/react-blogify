@@ -42,7 +42,7 @@
       "firstName": "Saad",
       "lastName": "Hassan",
       "avatar": "avatar-1710204436785-627839516.jpg",
-      "bio": "Senior Frontend Developer in LWS",
+      "bio": "Senior Frontend Developer in Learn with Sumit",
       "password": "$2b$08$e9uY0ZjxXJ9F4r36Ln4oCu4nLZ92OKaQ466VEVDtxBPCs/JL/ChR.",
       "favourites": [
         {
@@ -135,7 +135,7 @@
       "firstName": "Mahabub ",
       "lastName": "Hossain",
       "avatar": "avatar-1710581637038-224321940.jpg",
-      "bio": "I am Mahabub Hossain from Dhaka Bangladesh",
+      "bio": "I am Mahabub Hossain from Dhaka Bangladesh , Date of` Birth is 03/11/1990",
       "password": "$2b$08$thZyuwyZsAV5DmVAPwRqZu5dZ4Q0FHrWBJGpIRgpkUpSq5QcyWCMS",
       "favourites": [
         {
@@ -170,8 +170,8 @@
       "email": "neon@qpaybd.com.bd",
       "firstName": "Khairul",
       "lastName": "Hossain",
-      "avatar": null,
-      "bio": "I am Khirul Hasan",
+      "avatar": "avatar-1710600846316-3534627.png",
+      "bio": "I am Khairul Hasan Neon",
       "password": "$2b$08$GjsDU0iyJTbk3aTM9sFg7uuQZddNBNPuYYMUlVvZBj1o8W8EZQ/ie",
       "favourites": [
         {
@@ -188,6 +188,11 @@
           "id": "2fdf675e5a693f7610a3",
           "title": "India Tour ",
           "tags": "India"
+        },
+        {
+          "id": "7c12b4b48531bcc995ae",
+          "title": "A guide to Prototype in JavaScript",
+          "tags": "programming, algorithm, prototype, javascript"
         }
       ]
     }

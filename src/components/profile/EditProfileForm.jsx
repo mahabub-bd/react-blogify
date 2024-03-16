@@ -19,7 +19,6 @@ export default function EditProfileForm({ user }) {
   const navigate = useNavigate();
 
   const handleEditSubmit = async (data) => {
-    console.log(data);
     dispatch({ type: actions.profile.DATA_FETCH_ERROR });
     try {
       const formData = new FormData();
