@@ -17,14 +17,8 @@ export default function ProfileInfo() {
         fname={user?.firstName}
         isAuthonicate={isAuthonicateUser}
       />
-      <div>
-        <h3 className="text-2xl font-semibold text-white lg:text-[28px]">
-          {user?.firstName} {user?.lastName}
-        </h3>
-        <p className="leading-[231%] lg:text-lg mt-3">{user?.email}</p>
-      </div>
-      <Bio isAuthonicate={isAuthonicateUser} />
-      <div className="w-3/4 border-b border-[#3F3F3F] py-6 lg:py-8"></div>
+
+      <Bio />
     </div>
   );
 }

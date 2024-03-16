@@ -24,6 +24,10 @@ import TailwindThumb from "../assets/blogs/taiulwind-cn-thumb.jpg";
 import DummyImage from "../assets/blogs/dummyImage.png";
 import ClosedIcon from "../assets/icons/close.svg";
 
+import LogoutIcon from "../assets/icons/logout.svg";
+
+import ViewIcon from "../assets/icons/view-icon.svg";
+
 export {
   CheckedIcon,
   ClosedIcon,
@@ -35,8 +39,10 @@ export {
   HeartIcon,
   LikeIcon,
   LogoImage,
+  LogoutIcon,
   ReactRoadMap,
   SearchIcon,
   TailwindThumb,
   ThreeDotIcon,
+  ViewIcon,
 };

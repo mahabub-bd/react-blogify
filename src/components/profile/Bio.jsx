@@ -1,73 +1,26 @@
-import { useState } from "react";
-import { actions } from "../../actions";
-import { CheckedIcon, EditIcon } from "../../constants/image";
-import { useAxios, useProfile } from "../../hooks";
+import { useProfile } from "../../hooks";
 
-const Bio = ({ isAuthonicate }) => {
-  const { state, dispatch } = useProfile();
-
-  const { api } = useAxios();
-  const [bioData, setBioData] = useState(state?.user?.bio);
-  const [editMode, setEditMode] = useState(false);
-
-  const handleBioEdit = async () => {
-    dispatch({ type: actions.profile.DATA_FETCHING });
-    try {
-      const response = await api.patch(
-        `${import.meta.env.VITE_SERVER_BASE_URL}/profile`,
-        { bio: bioData }
-      );
-
-      if (response.status === 200) {
-        dispatch({
-          type: actions.profile.USER_DATA_EDITED,
-          data: response.data,
-        });
-      }
-      setEditMode(false);
-    } catch (error) {
-      dispatch({
-        type: actions.profile.DATA_FETCH_ERROR,
-        error: error.message,
-      });
-    }
-  };
+const Bio = () => {
+  const { state } = useProfile();
 
   return (
-    <div className="mt-4 flex items-start gap-2 lg:mt-6">
-      <div className="flex-1">
-        {!editMode ? (
-          <p className="leading-[188%] text-gray-400 lg:text-lg">
-            {state.user?.bio}
-          </p>
-        ) : (
-          <textarea
-            value={bioData}
-            onChange={(e) => setBioData(e.target.value)}
-            rows={3}
-            cols={80}
-            className="p-4 mx-auto leading-[188%] text-gray-300  card bg-gray-800 lg:lext-lg rounded-md"
-          />
-        )}
+    <>
+      <div>
+        <h3 className="text-2xl font-semibold text-white lg:text-[28px]">
+          {state?.user?.firstName} {state?.user?.lastName}
+        </h3>
+        <p className="leading-[231%] lg:text-lg mt-3">{state?.user?.email}</p>
       </div>
 
-      {isAuthonicate && (
-        <button
-          className="flex-center h-7 w-7 rounded-full"
-          onClick={() => setEditMode(true)}
-        >
-          {!editMode && <img src={EditIcon} alt="Edit" />}
-        </button>
-      )}
-      {editMode && isAuthonicate && (
-        <button
-          className="flex-center h-7 w-7 rounded-full"
-          onClick={handleBioEdit}
-        >
-          <img src={CheckedIcon} alt="Edit" />
-        </button>
-      )}
-    </div>
+      <div className="mt-4 flex items-start gap-2 lg:mt-6">
+        <div className="flex-1">
+          <p className="leading-[188%] text-gray-400 lg:text-lg">
+            {state?.user?.bio}
+          </p>
+        </div>
+      </div>
+      <div className="w-3/4 border-b border-[#3F3F3F] py-6 lg:py-8"></div>
+    </>
   );
 };
 

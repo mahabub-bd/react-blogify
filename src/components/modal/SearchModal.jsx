@@ -45,7 +45,9 @@ export default function SearchModal({
               {/* <!-- Search Result --> */}
               <div className="">
                 <h3 className="text-slate-400 font-bold mt-6">
-                  Search Results
+                  {blogs?.data &&
+                    !error &&
+                    `Search Results :  ${blogs?.data?.length} Blog found with " ${searchValue}" keyword`}
                 </h3>
 
                 {error && (

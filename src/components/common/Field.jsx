@@ -5,7 +5,7 @@ export default function Field({ label, children, htmlFor, error }) {
   return (
     <div className="form-control mb-6">
       {label && (
-        <label htmlFor={id} className="auth-label ">
+        <label htmlFor={id} className="auth-label  ">
           {label}
         </label>
       )}

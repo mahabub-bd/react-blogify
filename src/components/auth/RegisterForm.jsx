@@ -38,7 +38,7 @@ const RegisterForm = () => {
       <Field label="First Name" error={errors.firstName}>
         <input
           {...register("firstName", { required: "First Name is Required" })}
-          className={`w-full p-3 bg-[#030317] border border-white/20 rounded-md focus:outline-none focus:border-indigo-500 ${
+          className={`w-full p-3 mt-2 bg-[#030317] border border-white/20 rounded-md focus:outline-none focus:border-indigo-500 ${
             errors.firstName ? "border-red-500" : "border-gray-200"
           }`}
           type="firstName"
@@ -60,7 +60,7 @@ const RegisterForm = () => {
       <Field label="Email" error={errors.email}>
         <input
           {...register("email", { required: "Email ID is Required" })}
-          className={`w-full p-3 bg-[#030317] border border-white/20 rounded-md focus:outline-none focus:border-indigo-500 ${
+          className={`w-full p-3 mt-2 bg-[#030317] border border-white/20 rounded-md focus:outline-none focus:border-indigo-500 ${
             errors.email ? "border-red-500" : "border-gray-200"
           }`}
           type="email"
@@ -78,7 +78,7 @@ const RegisterForm = () => {
               message: "Your password must be at least 8 characters",
             },
           })}
-          className={`w-full p-3 bg-[#030317] border border-white/20 rounded-md focus:outline-none focus:border-indigo-500 ${
+          className={`w-full mt-2 p-3 bg-[#030317] border border-white/20 rounded-md focus:outline-none focus:border-indigo-500 ${
             errors.password ? "border-red-500" : "border-gray-200"
           }`}
           type="password"

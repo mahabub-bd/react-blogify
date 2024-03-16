@@ -9,15 +9,19 @@ import FavouriteBlog from "./blog/FavouriteBlog";
 import PopularBlog from "./blog/PopularBlog";
 import SingleBlogAction from "./blog/singleblog/SingleBlogAction";
 import SingleBlogDetails from "./blog/singleblog/SingleBlogDetails";
+import EditProfileInfo from "./profile/EditProfileInfo";
+import ProfileAction from "./profile/ProfileAction";
 
 export {
   BlogBoard,
   BlogList,
+  EditProfileInfo,
   FavouriteBlog,
   Footer,
   Header,
   LoginForm,
   PopularBlog,
+  ProfileAction,
   RegisterForm,
   SearchModal,
   SingleBlogAction,

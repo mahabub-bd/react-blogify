@@ -1,21 +1,22 @@
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../hooks";
+import { LogoutIcon } from "../../constants/image";
+import { useAuth, useProfile } from "../../hooks";
 
 export default function Logout() {
   const navigate = useNavigate();
   const { setAuth } = useAuth();
+  const { setShowProfileModal } = useProfile();
   const logoutClick = () => {
-    navigate("/");
+    setShowProfileModal(false);
+    navigate("/login");
     setAuth({});
   };
   return (
-    <li>
-      <button
-        onClick={logoutClick}
-        className="text-white/50 hover:text-white transition-all duration-200"
-      >
+    <div>
+      <button onClick={logoutClick} className="action-menu-item">
+        <img src={LogoutIcon} alt="3dots of Action" />
         Logout
       </button>
-    </li>
+    </div>
   );
 }

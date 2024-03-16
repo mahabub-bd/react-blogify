@@ -9,9 +9,19 @@ const ProfileProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(profileReducer, initialState);
   const [author, setAuthor] = useState(auth?.user?.id);
+  const [showProfileModal, setShowProfileModal] = useState(false);
 
   return (
-    <ProfileContext.Provider value={{ author, setAuthor, state, dispatch }}>
+    <ProfileContext.Provider
+      value={{
+        showProfileModal,
+        setShowProfileModal,
+        author,
+        setAuthor,
+        state,
+        dispatch,
+      }}
+    >
       {children}
     </ProfileContext.Provider>
   );

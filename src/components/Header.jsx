@@ -1,12 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { ProfileAction } from "../components";
 import { LogoImage, SearchIcon } from "../constants/image";
 import { useAuth, useProfile } from "../hooks";
-import Logout from "./auth/Logout";
 
 export default function Header() {
   const { auth } = useAuth();
-  const navigate = useNavigate();
-  const { setAuthor } = useProfile();
+  const { showProfileModal, setShowProfileModal } = useProfile();
 
   return (
     <header>
@@ -18,10 +17,6 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* <!-- Actions - Login, Write, Home, Search -->
-                <!-- Notes for Developers -->
-                <!-- For Logged in User - Write, Profile, Logout Menu -->
-                <!-- For Not Logged in User - Login Menu --> */}
         <div>
           <ul className="flex items-center space-x-5">
             <li>
@@ -43,9 +38,8 @@ export default function Header() {
                 </Link>
               </li>
             )}
-            {auth?.user ? (
-              <Logout />
-            ) : (
+
+            {!auth?.authToken && (
               <li>
                 <Link
                   to="/login"
@@ -57,11 +51,8 @@ export default function Header() {
             )}
 
             <li
-              className="flex items-center cursor-pointer "
-              onClick={() => {
-                navigate("/me");
-                setAuthor(auth?.user?.id);
-              }}
+              className="flex cursor-pointer items-center"
+              onClick={() => setShowProfileModal((prev) => !prev)}
             >
               {/* <!-- Circular Div with background color --> */}
               {auth?.user && auth.user.avatar ? (
@@ -89,10 +80,9 @@ export default function Header() {
                   <span className="text-white ml-2">{`${auth?.user?.firstName} ${auth?.user?.lastName}`}</span>
                 </p>
               )}
-
-              {/* <!-- Profile Image --> */}
             </li>
           </ul>
+          {showProfileModal && <ProfileAction />}
         </div>
       </nav>
     </header>

@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import AuthorPage from "./page/AuthorPage";
 import CreateBlog from "./page/CreateBlog";
 import EditBlog from "./page/EditBlog";
+import EditProfile from "./page/EditProfile";
 import HomePage from "./page/HomePage";
 import LoginPage from "./page/LoginPage";
 import NotFound from "./page/NotFound";
@@ -28,6 +29,7 @@ function App() {
         <Route element={<PrivateRoutes />}>
           <Route element={<CreateBlog />} path="/createblog" />
           <Route element={<ProfilePage />} path="/me" />
+          <Route element={<EditProfile />} path="editprofile" />
           <Route element={<EditBlog />} path="/editblog" />
         </Route>
       </Routes>
