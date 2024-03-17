@@ -27,7 +27,7 @@ const BlogBoard = () => {
         } else {
           setShowBlog((prev) => prev + 5);
         }
-
+        console.log(response.data);
         dispatch({
           type: actions.blog.DATA_FETCHED,
           data: response.data,

@@ -12,7 +12,7 @@ export default function BlogEdit({ blog }) {
   const { api } = useAxios();
   const { setBlogId } = useSingleBlog();
   const navigate = useNavigate();
-
+  console.log(blog);
   const {
     register,
     handleSubmit,
@@ -48,7 +48,7 @@ export default function BlogEdit({ blog }) {
         `${import.meta.env.VITE_SERVER_BASE_URL}/blogs/${blog?.id}`,
         formData
       );
-      setBlogId(response?.data?.blog?.id);
+      setBlogId(response?.data?.id);
       if (response.status === 200) {
         dispatch({ type: actions.blog.DATA_EDITED, data: response.data });
       }
