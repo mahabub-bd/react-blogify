@@ -6,6 +6,7 @@ import Field from "../common/Field";
 
 export default function LoginForm() {
   const { setAuth } = useAuth();
+
   const {
     register,
     handleSubmit,

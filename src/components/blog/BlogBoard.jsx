@@ -42,15 +42,15 @@ const BlogBoard = () => {
 
     const onIntersection = (items) => {
       const loaderItem = items[0];
-      if (loaderItem.isIntersecting && hasMore) {
+      if (loaderItem?.isIntersecting && hasMore) {
         fetchData();
       }
     };
 
     const observer = new IntersectionObserver(onIntersection);
 
-    if (observer && loaderRef.current) {
-      observer.observe(loaderRef.current);
+    if (observer && loaderRef?.current) {
+      observer.observe(loaderRef?.current);
     }
 
     return () => {
@@ -69,7 +69,7 @@ const BlogBoard = () => {
   if (state?.error) {
     return (
       <div className="text-center">
-        Error in fetching Blogs{state?.error?.message}
+        Error in fetching Blogs {state?.error?.message}
       </div>
     );
   }

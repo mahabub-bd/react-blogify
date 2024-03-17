@@ -70,11 +70,11 @@ const BlogCard = ({ blog }) => {
       )}
 
       <div className="mt-2 relative">
-        <h3 className="text-slate-300 text-xl lg:text-2xl">
+        <h3 className="text-slate-200 text-xl lg:text-2xl">
           <p>{blog?.title}</p>
         </h3>
 
-        <p className="mb-6 text-base text-slate-500 mt-1 line-clamp-4">
+        <p className="mb-6 text-base text-slate-400 mt-1 line-clamp-4">
           {blog?.content}
         </p>
 
@@ -96,7 +96,7 @@ const BlogCard = ({ blog }) => {
             )}
 
             <div>
-              <h5 className="text-slate-500 text-sm">
+              <h5 className="text-slate-300 text-sm">
                 <Link
                   to="/author"
                   onClick={(e) => {
@@ -104,16 +104,16 @@ const BlogCard = ({ blog }) => {
                     setAuthor(blog?.author?.id);
                   }}
                 >
-                  {`${blog?.author?.firstName} ${blog?.author?.lastName}`}{" "}
+                  {`${blog?.author?.firstName} ${blog?.author?.lastName}`}
                 </Link>
               </h5>
-              <div className="flex items-center text-xs text-slate-700">
+              <div className="flex items-center text-xs text-slate-400">
                 <span>{formatDate(blog?.createdAt)}</span>
               </div>
             </div>
           </div>
 
-          <div className="text-sm px-2 py-1 text-slate-700">
+          <div className="text-sm px-2 py-1 text-slate-400 flex justify-between">
             <span>{blog?.likes?.length ?? 0} Likes</span>
           </div>
         </div>
