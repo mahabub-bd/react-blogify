@@ -114,7 +114,7 @@ const BlogCard = ({ blog }) => {
           </div>
 
           <div className="text-sm px-2 py-1 text-slate-400 flex justify-between">
-            <span>{blog?.likes?.length ?? 0} Likes</span>
+            <span>{blog?.likes?.length ?? 0} 👍️ Likes</span>
           </div>
         </div>
 

@@ -1,17 +1,19 @@
 import { Route, Routes } from "react-router-dom";
-import AuthorPage from "./page/AuthorPage";
-import CreateBlog from "./page/CreateBlog";
-import EditBlog from "./page/EditBlog";
-import EditProfile from "./page/EditProfile";
-import HomePage from "./page/HomePage";
-import LoginPage from "./page/LoginPage";
-import NotFound from "./page/NotFound";
-import ProfilePage from "./page/ProfilePage";
-import RegisterPage from "./page/Register";
-import SearchPage from "./page/SearchPage";
-import SingleBlogPage from "./page/SingleBlogPage";
-import PrivateRoutes from "./routes/PrivateRoutes";
-import PublicRoutes from "./routes/Routes";
+import {
+  AuthorPage,
+  CreateBlog,
+  EditBlog,
+  EditProfile,
+  HomePage,
+  LoginPage,
+  NotFound,
+  ProfilePage,
+  RegisterPage,
+  SearchPage,
+  SingleBlogPage,
+} from "./page";
+
+import { PrivateRoutes, PublicRoutes } from "./routes";
 
 function App() {
   return (
