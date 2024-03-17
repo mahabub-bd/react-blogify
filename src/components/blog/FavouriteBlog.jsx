@@ -57,7 +57,11 @@ export default function FavouriteBlog() {
 
       <ul className="space-y-5 my-5">
         {state?.blogs?.map((blog) => (
-          <li key={blog.id} onClick={() => handleSingleBlogDetails(blog.id)}>
+          <li
+            className="sidebar-card"
+            key={blog.id}
+            onClick={() => handleSingleBlogDetails(blog.id)}
+          >
             <h3 className="text-slate-400 font-medium hover:text-slate-300 transition-all cursor-pointer">
               {blog?.title}
             </h3>
