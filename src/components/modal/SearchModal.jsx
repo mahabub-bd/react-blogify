@@ -2,7 +2,7 @@ import ReactDOM from "react-dom";
 
 import { useEffect, useRef } from "react";
 import { BlogBoard } from "..";
-import { ClosedIcon } from "../../constants/image";
+import { ClosedIcon, SearchPhoto } from "../../constants/image";
 import { usePortal } from "../../hooks";
 import Searchcard from "./SearchCard";
 
@@ -49,15 +49,25 @@ export default function SearchModal({
                     !error &&
                     `Search Results :  ${blogs?.data?.length} Blog found with " ${searchValue}" keyword`}
                 </h3>
-
+                {!blogs?.data && (
+                  <div className="flex flex-col items-center  justify-between">
+                    <img
+                      className="w-40 mt-10"
+                      src={SearchPhoto}
+                      alt="search"
+                    />
+                    <p className="mt-5">
+                      Start typing to search for your desire blogs
+                    </p>
+                  </div>
+                )}
                 {error && (
-                  <h2 className="mt-2 text-center">
-                    {" "}
-                    {`No results found  with ${searchValue}`}{" "}
+                  <h2 className="mt-5 text-center">
+                    {`No results found  with ${searchValue}`}
                   </h2>
                 )}
                 {loading && <h1>Loading Search Data</h1>}
-                <div className="my-4 divide-y-2 divide-slate-500/30 max-h-[440px] overflow-y-scroll overscroll-contain">
+                <div className="my-4 divide-y-2 divide-slate-500/30 max-h-[440px]  overflow-y-scroll overscroll-contain">
                   {!error && (
                     <div className="my-4 divide-y-2 divide-slate-500/30 max-h-[440px] overflow-y-scroll overscroll-contain">
                       {blogs?.data?.map((blog) => (

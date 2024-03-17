@@ -28,6 +28,8 @@ import LogoutIcon from "../assets/icons/logout.svg";
 
 import ViewIcon from "../assets/icons/view-icon.svg";
 
+import SearchPhoto from "../assets/icons/searchPhoto.svg";
+
 export {
   CheckedIcon,
   ClosedIcon,
@@ -42,6 +44,7 @@ export {
   LogoutIcon,
   ReactRoadMap,
   SearchIcon,
+  SearchPhoto,
   TailwindThumb,
   ThreeDotIcon,
   ViewIcon,
