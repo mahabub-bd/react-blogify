@@ -34,7 +34,7 @@ export default function ProfilePage() {
   return (
     <div className="container">
       <ProfileInfo />
-      <MyBlog blogs={state?.blogs} />
+      <MyBlog blogs={state?.user?.blogs} />
     </div>
   );
 }

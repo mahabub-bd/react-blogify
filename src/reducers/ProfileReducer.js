@@ -2,7 +2,6 @@ import { actions } from "../actions";
 
 const initialState = {
   user: null,
-  blogs: [],
   loading: false,
   error: null,
 };
@@ -20,7 +19,6 @@ const profileReducer = (state, action) => {
         ...state,
         loading: false,
         user: action.data,
-        blogs: action.data.blogs,
       };
     }
 
