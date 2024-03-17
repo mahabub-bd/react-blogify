@@ -59,7 +59,10 @@ export default function EditProfileForm({ user }) {
   }, [setValue, user]);
 
   return (
-    <form onSubmit={handleSubmit(handleEditSubmit)}>
+    <form
+      className="mt-5 p-3 shadow-md"
+      onSubmit={handleSubmit(handleEditSubmit)}
+    >
       <Field label="First Name" error={errors.firstName}>
         <input
           {...register("firstName", { required: "First Name is Required" })}
@@ -95,7 +98,7 @@ export default function EditProfileForm({ user }) {
         ></textarea>
       </Field>
       <button type="submit">
-        <a className="bg-indigo-600 text-white px-6 py-2 md:py-3 rounded-md hover:bg-indigo-700 transition-all duration-200">
+        <a className="bg-indigo-600 text-white px-4 py-1 md:py-2 rounded-md hover:bg-indigo-700 transition-all duration-200">
           Update Profile
         </a>
       </button>

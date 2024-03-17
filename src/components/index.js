@@ -2,6 +2,7 @@ import SearchModal from "../components/modal/SearchModal";
 import Footer from "./Footer";
 import Header from "./Header";
 import LoginForm from "./auth/LoginForm";
+import Logout from "./auth/Logout";
 import RegisterForm from "./auth/RegisterForm";
 import BlogBoard from "./blog/BlogBoard";
 import BlogList from "./blog/BlogList";
@@ -20,6 +21,7 @@ export {
   Footer,
   Header,
   LoginForm,
+  Logout,
   PopularBlog,
   ProfileAction,
   RegisterForm,

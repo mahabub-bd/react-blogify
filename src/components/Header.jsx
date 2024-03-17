@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ProfileAction } from "../components";
+import { Logout, ProfileAction } from "../components";
 import { LogoImage, SearchIcon } from "../constants/image";
 import { useAuth, useProfile } from "../hooks";
 
@@ -39,7 +39,9 @@ export default function Header() {
               </li>
             )}
 
-            {!auth?.authToken && (
+            {auth?.user ? (
+              <Logout />
+            ) : (
               <li>
                 <Link
                   to="/login"

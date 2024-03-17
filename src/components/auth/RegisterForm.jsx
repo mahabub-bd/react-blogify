@@ -49,7 +49,7 @@ const RegisterForm = () => {
       <Field label="Last Name" error={errors.lastName}>
         <input
           {...register("lastName")}
-          className={`w-full p-3 bg-[#030317] border border-white/20 rounded-md focus:outline-none focus:border-indigo-500 ${
+          className={`w-full p-3 mt-2 bg-[#030317] border border-white/20 rounded-md focus:outline-none focus:border-indigo-500 ${
             errors.lastName ? "border-red-500" : "border-gray-200"
           }`}
           type="lastName"
