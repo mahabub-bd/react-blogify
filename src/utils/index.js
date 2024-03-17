@@ -7,6 +7,35 @@ function formatDate(dateString) {
   };
   return date.toLocaleDateString("en-US", options);
 }
+
+const getDateDifferenceFromNow = (fromDate) => {
+  let difference = new Date().getTime() - new Date(fromDate).getTime();
+
+  difference = difference / 1000;
+  let dayDifference = Math.floor(difference / (3600 * 24));
+  difference -= dayDifference * 3600 * 24;
+  let hourDifference = Math.floor(difference / 3600);
+
+  let message = "";
+
+  if (dayDifference > 0) {
+    message += `${dayDifference} day`;
+    if (dayDifference > 1) {
+      message += "s";
+    }
+    message += " ";
+  }
+
+  if (hourDifference > 0) {
+    message += `${hourDifference} hour`;
+    if (hourDifference > 1) {
+      message += "s";
+    }
+  }
+
+  return message.trim();
+};
+
 function commentColor(index) {
   const backgroundColors = [
     "bg-rose-600",
@@ -26,4 +55,4 @@ function commentColor(index) {
   return backgroundColors[colorIndex];
 }
 
-export { commentColor, formatDate };
+export { commentColor, formatDate, getDateDifferenceFromNow };

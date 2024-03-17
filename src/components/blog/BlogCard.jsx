@@ -8,7 +8,7 @@ import {
   useProfile,
   useSingleBlog,
 } from "../../hooks";
-import { formatDate } from "../../utils";
+import { getDateDifferenceFromNow } from "../../utils";
 import BlogAction from "./BlogAction";
 const placeholderImageUrl = `https://via.placeholder.com/350x200/000000/FFFFFF`;
 
@@ -108,7 +108,7 @@ const BlogCard = ({ blog }) => {
                 </Link>
               </h5>
               <div className="flex items-center text-xs text-slate-400">
-                <span>{formatDate(blog?.createdAt)}</span>
+                <span>{getDateDifferenceFromNow(blog?.createdAt)} Ago</span>
               </div>
             </div>
           </div>
