@@ -30,7 +30,10 @@ import ViewIcon from "../assets/icons/view-icon.svg";
 
 import SearchPhoto from "../assets/icons/searchPhoto.svg";
 
+import BlueLikeIcon from "../assets/icons/blue-like-button-icon.svg";
+
 export {
+  BlueLikeIcon,
   CheckedIcon,
   ClosedIcon,
   CommentIcon,

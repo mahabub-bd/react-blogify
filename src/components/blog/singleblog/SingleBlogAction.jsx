@@ -1,6 +1,7 @@
 import { toast } from "react-toastify";
 import { actions } from "../../../actions";
 import {
+  BlueLikeIcon,
   CommentIcon,
   HeartFilled,
   HeartIcon,
@@ -12,6 +13,10 @@ export default function SingleBlogAction() {
   const { state, dispatch } = useSingleBlog();
   const { api } = useAxios();
   const { auth } = useAuth();
+
+  const match = !!state?.blog?.likes?.find(
+    (item) => item.id === auth?.user?.id
+  );
 
   const handleLikeBlog = async () => {
     if (auth?.authToken) {
@@ -68,7 +73,7 @@ export default function SingleBlogAction() {
       <ul className="floating-action-menus">
         <button onClick={handleLikeBlog}>
           <li>
-            <img src={LikeIcon} alt="like" />
+            <img src={match ? BlueLikeIcon : LikeIcon} alt="like" />
             <span>{state?.blog?.likes?.length}</span>
           </li>
         </button>

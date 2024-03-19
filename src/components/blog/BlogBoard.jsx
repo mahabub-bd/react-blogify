@@ -13,9 +13,8 @@ const BlogBoard = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      dispatch({ type: actions.blog.DATA_FETCHING });
       try {
-        dispatch({ type: actions.blog.DATA_FETCHING });
-
         const response = await axios.get(
           `${
             import.meta.env.VITE_SERVER_BASE_URL
