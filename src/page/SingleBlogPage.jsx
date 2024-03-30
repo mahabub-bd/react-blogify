@@ -1,12 +1,14 @@
 import axios from "axios";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { actions } from "../actions";
 import { SingleBlogAction, SingleBlogDetails } from "../components";
 import { useSingleBlog } from "../hooks";
 
 export default function SingleBlogPage() {
   const { dispatch } = useSingleBlog();
-  const { blogId } = useSingleBlog();
+
+  const { id } = useParams();
 
   useEffect(() => {
     dispatch({ type: actions.singleblog.DATA_FETCHING });
@@ -14,7 +16,7 @@ export default function SingleBlogPage() {
       dispatch({ type: actions.singleblog.DATA_FETCHING });
       try {
         const response = await axios?.get(
-          `${import.meta.env.VITE_SERVER_BASE_URL}/blogs/${blogId}`
+          `${import.meta.env.VITE_SERVER_BASE_URL}/blogs/${id}`
         );
 
         dispatch({
@@ -30,7 +32,7 @@ export default function SingleBlogPage() {
     };
 
     fetchData();
-  }, [blogId, dispatch]);
+  }, [dispatch, id]);
   return (
     <>
       <SingleBlogDetails />

@@ -1,11 +1,12 @@
 import axios from "axios";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks";
 import Field from "../common/Field";
 
 export default function LoginForm() {
-  const { setAuth } = useAuth();
+  const { auth, setAuth } = useAuth();
 
   const {
     register,
@@ -14,6 +15,15 @@ export default function LoginForm() {
     setError,
   } = useForm();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check if user is already authenticated (e.g., tokens exist in local storage)
+    const authToken = localStorage.getItem("authToken");
+    const refreshToken = localStorage.getItem("refreshToken");
+    if (authToken && refreshToken && !auth.user) {
+      setAuth({ authToken, refreshToken });
+    }
+  }, [auth.user, setAuth]);
 
   const submitForm = async (formData) => {
     try {
@@ -29,6 +39,7 @@ export default function LoginForm() {
           const authToken = token.accessToken;
           const refreshToken = token.refreshToken;
           setAuth({ user, authToken, refreshToken });
+
           navigate("/");
         }
       }
@@ -40,6 +51,7 @@ export default function LoginForm() {
       });
     }
   };
+
   return (
     <form onSubmit={handleSubmit(submitForm)}>
       <Field label="Email" error={errors.email}>
@@ -51,6 +63,7 @@ export default function LoginForm() {
           type="email"
           name="email"
           id="email"
+          placeholder="Write Your Email Address"
         />
       </Field>
 
@@ -63,6 +76,7 @@ export default function LoginForm() {
           type="password"
           name="password"
           id="password"
+          placeholder="Write Your Password"
         />
       </Field>
 

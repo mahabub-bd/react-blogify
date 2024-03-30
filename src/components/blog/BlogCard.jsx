@@ -1,28 +1,21 @@
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { actions } from "../../actions";
-import {
-  useAuth,
-  useAxios,
-  useBlog,
-  useProfile,
-  useSingleBlog,
-} from "../../hooks";
+import { useAuth, useAxios, useBlog } from "../../hooks";
 import { getDateDifferenceFromNow } from "../../utils";
 import BlogAction from "./BlogAction";
 const placeholderImageUrl = `https://via.placeholder.com/350x200/000000/FFFFFF`;
 
 const BlogCard = ({ blog }) => {
   const { auth } = useAuth();
-  const { setAuthor } = useProfile();
+
   const navigate = useNavigate();
-  const { setBlogId } = useSingleBlog();
+
   const { dispatch } = useBlog();
   const { api } = useAxios();
 
   const handleSingleBlogDetails = (blogId) => {
-    navigate("/singleblog");
-    setBlogId(blogId);
+    navigate(`/blogs/${blogId}`);
   };
 
   const handleEditBlog = async (blogId, data) => {
@@ -98,10 +91,9 @@ const BlogCard = ({ blog }) => {
             <div>
               <h5 className="text-slate-300 text-sm">
                 <Link
-                  to="/author"
+                  to={`/author/${blog?.author?.id}`}
                   onClick={(e) => {
                     e.stopPropagation();
-                    setAuthor(blog?.author?.id);
                   }}
                 >
                   {`${blog?.author?.firstName} ${blog?.author?.lastName}`}

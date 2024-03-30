@@ -7,7 +7,6 @@ const useAxios = () => {
   const { auth, setAuth } = useAuth();
 
   useEffect(() => {
-    // Add a request interceptor
     const requestIntercept = api.interceptors.request.use(
       (config) => {
         const authToken = auth?.authToken;
@@ -43,7 +42,6 @@ const useAxios = () => {
             console.log(`New Token: ${token}`);
             setAuth({ ...auth, authToken: token });
 
-            // Retry the original request with the new token
             originalRequest.headers.Authorization = `Bearer ${token}`;
             return axios(originalRequest);
           } catch (error) {

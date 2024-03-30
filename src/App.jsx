@@ -23,14 +23,14 @@ function App() {
           <Route element={<HomePage />} path="/" />
           <Route element={<LoginPage />} path="/login" />
           <Route element={<RegisterPage />} path="/register" />
-          <Route element={<AuthorPage />} path="/author" />
-          <Route element={<SingleBlogPage />} path="/singleblog" />
+          <Route element={<AuthorPage />} path="/author/:id" />
+          <Route element={<SingleBlogPage />} path="/blogs/:id" />
           <Route element={<SearchPage />} path="/search" />
           <Route element={<NotFound />} path="*" />
         </Route>
         <Route element={<PrivateRoutes />}>
           <Route element={<CreateBlog />} path="/createblog" />
-          <Route element={<ProfilePage />} path="/me" />
+          <Route element={<ProfilePage />} path="/me/:id" />
           <Route element={<EditProfile />} path="editprofile" />
           <Route element={<EditBlog />} path="/editblog" />
         </Route>

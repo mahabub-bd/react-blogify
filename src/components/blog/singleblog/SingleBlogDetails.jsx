@@ -1,12 +1,11 @@
 import DOMPurify from "dompurify";
 import { Link } from "react-router-dom";
-import { useProfile, useSingleBlog } from "../../../hooks";
+import { useSingleBlog } from "../../../hooks";
 import { formatDate } from "../../../utils";
 import Comment from "./Comment";
 
 export default function SingleBlogDetails() {
   const { state } = useSingleBlog();
-  const { setAuthor } = useProfile();
 
   if (!state || !state.blog || !state.blog.author) {
     return <div className="text-center">Loading Blog...</div>;
@@ -37,10 +36,9 @@ export default function SingleBlogDetails() {
             )}
             <h5 className="text-slate-500 text-sm">
               <Link
-                to="/author"
+                to={`/author/${blog?.author?.id}`}
                 onClick={(e) => {
                   e.stopPropagation();
-                  setAuthor(blog.author.id);
                 }}
               >
                 {`${blog.author.firstName} ${blog.author.lastName}`}

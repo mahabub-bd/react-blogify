@@ -5,7 +5,9 @@ export default function LoginPage() {
     <main className="min-h-[75vh]">
       <section className="container">
         <div className="w-full md:w-1/2 mx-auto bg-[#030317] p-8 rounded-md mt-12">
-          <h2 className="text-2xl font-bold mb-12 text-center">Login</h2>
+          <h2 className="text-xl font-semibold mb-10 text-center">
+            Login in with your credential
+          </h2>
           <LoginForm />
         </div>
       </section>

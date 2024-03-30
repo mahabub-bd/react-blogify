@@ -36,8 +36,8 @@ export default function EditProfileForm({ user }) {
           data: response.data,
         });
       }
-      toast.success("Profile Sucessfully Modified");
-      navigate("/me");
+      toast.success("Profile Modified Sucessfully ");
+      navigate(`/me/${response?.data?.user?.id}`);
     } catch (error) {
       dispatch({
         type: actions.profile.DATA_FETCH_ERROR,
@@ -93,7 +93,9 @@ export default function EditProfileForm({ user }) {
           name="bio"
           cols={80}
           rows="4"
-          className="bg-[#030317] border p-2"
+          className={`w-full mt-2 p-3 bg-[#030317] border border-white/20 rounded-md focus:outline-none focus:border-indigo-500 ${
+            errors.lastName ? "border-red-500" : "border-gray-200"
+          }`}
           placeholder="Write your bio"
         ></textarea>
       </Field>

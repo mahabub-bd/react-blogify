@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { actions } from "../../../actions";
 import { DeleteIcon } from "../../../constants/image";
 import { useAuth, useAxios, useSingleBlog } from "../../../hooks";
@@ -132,9 +133,13 @@ export default function Comment() {
                 )}
               </div>
               <div className="w-full">
-                <h5 className="text-slate-500 font-bold">
+                <Link
+                  to={`/author/${comment?.author?.id}`}
+                  onClick={() => {}}
+                  className="text-slate-500 font-bold"
+                >
                   {comment?.author?.firstName} {comment?.author?.lastName}
-                </h5>
+                </Link>
                 <div className="flex items-center w-50">
                   <p className="text-slate-300 w-3/4">{comment.content}</p>
 

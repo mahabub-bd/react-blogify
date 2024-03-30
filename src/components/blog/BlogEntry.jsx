@@ -1,14 +1,14 @@
-import { useRef } from "react";
+import { useRef } from "react"; // Added useState
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { actions } from "../../actions";
-import { useAxios, useBlog, useSingleBlog } from "../../hooks";
+import { useAxios, useBlog } from "../../hooks";
 import Field from "../common/Field";
 
 export default function BlogEntry() {
   const { dispatch } = useBlog();
-  const { setBlogId } = useSingleBlog();
+
   const { api } = useAxios();
   const fileUploaderRef = useRef();
   const navigate = useNavigate();
@@ -24,10 +24,9 @@ export default function BlogEntry() {
     event.preventDefault();
     fileUploaderRef.current.click();
   };
+
   const handleBlogSubmit = async (data) => {
     dispatch({ type: actions.blog.DATA_FETCHING });
-
-    navigate("/singleblog");
 
     try {
       const formData = new FormData();
@@ -39,13 +38,13 @@ export default function BlogEntry() {
         `${import.meta.env.VITE_SERVER_BASE_URL}/blogs`,
         formData
       );
-      setBlogId(response?.data?.blog?.id);
 
       if (response.status === 201) {
         dispatch({ type: actions.blog.DATA_CREATED, data: response.data });
       }
-      toast.success("Blog Create Sucessfull");
-      navigate("/singleblog");
+      toast.success("Blog Create Successful");
+
+      navigate(`/blogs/${response?.data?.id}`);
     } catch (error) {
       dispatch({
         type: actions.blog.DATA_CREATED_FAILURE,
@@ -69,7 +68,7 @@ export default function BlogEntry() {
             >
               <div className="grid place-items-center bg-slate-600/20 h-[150px] rounded-md my-4">
                 <div className="flex items-center gap-4 hover:scale-110 transition-all cursor-pointer">
-                  <button onClick={handleImageUpload} className="flex">
+                  <button onClick={handleImageUpload} className="flex ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"

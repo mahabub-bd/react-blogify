@@ -3,7 +3,6 @@ import { useEffect, useReducer } from "react";
 import { actions } from "../../actions";
 
 import { Link, useNavigate } from "react-router-dom";
-import { useProfile, useSingleBlog } from "../../hooks";
 import {
   initialState,
   mostpopularReducer,
@@ -11,9 +10,7 @@ import {
 
 export default function PopularBlog() {
   const [state, dispatch] = useReducer(mostpopularReducer, initialState);
-  const { setAuthor } = useProfile();
 
-  const { setBlogId } = useSingleBlog();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,8 +47,7 @@ export default function PopularBlog() {
   }
 
   const handleSingleBlogDetails = (blogId) => {
-    navigate("/singleblog");
-    setBlogId(blogId);
+    navigate(`/blogs/${blogId}`);
   };
 
   return (
@@ -74,10 +70,9 @@ export default function PopularBlog() {
               Write by
               <Link
                 className="mx-1"
-                to="/author"
+                to={`/author/${blog?.author?.id}`}
                 onClick={(e) => {
                   e.stopPropagation();
-                  setAuthor(blog?.author?.id);
                 }}
               >
                 {`${blog?.author?.firstName} ${blog?.author?.lastName}`}{" "}

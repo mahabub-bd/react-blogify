@@ -2,13 +2,16 @@ import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { actions } from "../../actions";
 import { FavouriteBlog, PopularBlog } from "../../components";
+import { ServerDown } from "../../constants/image";
 import { useBlog } from "../../hooks";
+import Loading from "../Loading";
 import BlogList from "./BlogList";
 
 const BlogBoard = () => {
   const { state, dispatch } = useBlog();
   const [showBlog, setShowBlog] = useState(10);
   const [hasMore, setHasMore] = useState(true);
+
   const loaderRef = useRef(null);
 
   useEffect(() => {
@@ -59,16 +62,21 @@ const BlogBoard = () => {
 
   if (state?.loading) {
     return (
-      <div className="min-h-[740px] flex justify-center items-center">
-        Fetching Loading Blog Data ...
+      <div className=" min-h-[700px] flex justify-center items-center">
+        <Loading />
       </div>
     );
   }
 
   if (state?.error) {
     return (
-      <div className="text-center">
-        Error in fetching Blogs {state?.error?.message}
+      <div className=" min-h-[700px] flex justify-center items-center flex-col">
+        <p>Error in fetching Blogs data : {state?.error}</p>
+        <img
+          className="mt-10 w-[200px]"
+          src={ServerDown}
+          alt="external-Server-Error-big-data-and-data-science-vectorslab-flat-vectorslab"
+        />
       </div>
     );
   }

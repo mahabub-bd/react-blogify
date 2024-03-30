@@ -3,16 +3,16 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { actions } from "../../actions";
-import { useAxios, useBlog, useSingleBlog } from "../../hooks";
+import { useAxios, useBlog } from "../../hooks";
 import Field from "../common/Field";
 
 export default function BlogEdit({ blog }) {
   const fileUploaderRef = useRef();
   const { dispatch } = useBlog();
   const { api } = useAxios();
-  const { setBlogId } = useSingleBlog();
+
   const navigate = useNavigate();
-  console.log(blog);
+
   const {
     register,
     handleSubmit,
@@ -48,12 +48,12 @@ export default function BlogEdit({ blog }) {
         `${import.meta.env.VITE_SERVER_BASE_URL}/blogs/${blog?.id}`,
         formData
       );
-      setBlogId(response?.data?.id);
+
       if (response.status === 200) {
         dispatch({ type: actions.blog.DATA_EDITED, data: response.data });
       }
       toast.success("Blog Sucessfully Modified");
-      navigate("/singleblog");
+      navigate(`/blogs/${response?.data?.id}`);
     } catch (error) {
       dispatch({ type: actions.blog.DATA_EDITED_ERROR, error: error.message });
       setError("root.random", {

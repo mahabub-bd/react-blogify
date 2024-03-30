@@ -5,7 +5,7 @@ import Logout from "../auth/Logout";
 
 const ProfileAction = () => {
   const navigate = useNavigate();
-  const { setAuthor, setShowProfileModal } = useProfile();
+  const { setShowProfileModal } = useProfile();
   const { auth } = useAuth();
 
   return (
@@ -14,8 +14,7 @@ const ProfileAction = () => {
         <button
           onClick={() => {
             setShowProfileModal(false);
-            navigate("/me");
-            setAuthor(auth?.user?.id);
+            navigate(`/me/${auth?.user?.id}`);
           }}
           className="action-menu-item "
         >
