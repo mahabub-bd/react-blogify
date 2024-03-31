@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import { LogoImage } from "../constants/image";
+import { LogoImage } from "../../constants/image";
 
 export default function Footer() {
   return (

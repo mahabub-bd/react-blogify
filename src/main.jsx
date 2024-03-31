@@ -24,9 +24,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         theme="dark"
         transition:Bounce
       />
-
-      <BlogProvider>
-        <AuthProvider>
+      <AuthProvider>
+        <BlogProvider>
           <SingleBlogProvider>
             <ProfileProvider>
               <Router>
@@ -34,8 +33,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               </Router>
             </ProfileProvider>
           </SingleBlogProvider>
-        </AuthProvider>
-      </BlogProvider>
+        </BlogProvider>
+      </AuthProvider>
     </QueryClientProvider>
   </React.StrictMode>
 );

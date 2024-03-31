@@ -133,9 +133,9 @@
       "id": "883d1c315241dff57044",
       "email": "contact@mahabub.me",
       "firstName": "Mahabub ",
-      "lastName": "Hossain",
+      "lastName": "Hossain ",
       "avatar": "avatar-1710581637038-224321940.jpg",
-      "bio": "I am Mahabub Hossain from Dhaka,  Bangladesh , Birth  Day is 03/11/1990",
+      "bio": "I am Mahabub Hossain from Dhaka,  Bangladesh , ITC PLC Limited",
       "password": "$2b$08$thZyuwyZsAV5DmVAPwRqZu5dZ4Q0FHrWBJGpIRgpkUpSq5QcyWCMS",
       "favourites": [
         {
@@ -147,11 +147,6 @@
           "id": "4321b782f360f58c8c86",
           "title": "এন্ড্রয়েড পার্মিশন",
           "tags": "android, java, kotlin, permission"
-        },
-        {
-          "id": "44ffdf33f8a72ad11cd7",
-          "title": "দুর্দান্ত ক্যামেরায় ৬ স্মার্টফোন",
-          "tags": "Camera,SmartPhone"
         },
         {
           "id": "4321b782f360f58c8c87",
@@ -652,9 +647,9 @@
     },
     {
       "id": "44ffdf33f8a72ad11cd7",
-      "title": "দুর্দান্ত ক্যামেরায় ৬ স্মার্টফোন linum",
+      "title": "দুর্দান্ত ক্যামেরায় ৬ স্মার্টফোন ",
       "content": "মোবাইল ফোনের নানান ব্যবহারের মধ্যে ছবি তোলা এবং ভিডিও করা এখন গুরুত্বপূর্ণ হয়ে উঠেছে। তাই এটি কেনার সময় কোন ব্র্যান্ডের মোবাইল ফোনের ক্যামেরায় কত ভালো ছবি ওঠে, পিক্সেল কত, ফ্রন্...",
-      "thumbnail": "thumbnail-1710692444600-370506550.webp",
+      "thumbnail": "thumbnail-1711813266734-857808305.webp",
       "author": {
         "id": "883d1c315241dff57044",
         "firstName": "Mahabub ",
@@ -662,7 +657,11 @@
         "avatar": "avatar-1710413232728-249389255.png"
       },
       "tags": "Camera,   SmartPhone",
-      "likes": [],
+      "likes": [
+        {
+          "id": "883d1c315241dff57044"
+        }
+      ],
       "comments": [
         {
           "id": "0409608417476ae8ba90",
@@ -671,6 +670,16 @@
             "id": "883d1c315241dff57044",
             "firstName": "Mahabub ",
             "lastName": "Hossain",
+            "avatar": "avatar-1710581637038-224321940.jpg"
+          }
+        },
+        {
+          "id": "1334de8090a46f944d6a",
+          "content": "Nice",
+          "author": {
+            "id": "883d1c315241dff57044",
+            "firstName": "Mahabub ",
+            "lastName": "Hossain ",
             "avatar": "avatar-1710581637038-224321940.jpg"
           }
         }

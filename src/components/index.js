@@ -1,6 +1,5 @@
 import SearchModal from "../components/modal/SearchModal";
-import Footer from "./Footer";
-import Header from "./Header";
+
 import LoginForm from "./auth/LoginForm";
 import Logout from "./auth/Logout";
 import RegisterForm from "./auth/RegisterForm";
@@ -10,6 +9,9 @@ import FavouriteBlog from "./blog/FavouriteBlog";
 import PopularBlog from "./blog/PopularBlog";
 import SingleBlogAction from "./blog/singleblog/SingleBlogAction";
 import SingleBlogDetails from "./blog/singleblog/SingleBlogDetails";
+import Footer from "./common/Footer";
+import Header from "./common/Header";
+import Loading from "./common/Loading";
 import EditProfileInfo from "./profile/EditProfileInfo";
 import ProfileAction from "./profile/ProfileAction";
 
@@ -20,6 +22,7 @@ export {
   FavouriteBlog,
   Footer,
   Header,
+  Loading,
   LoginForm,
   Logout,
   PopularBlog,

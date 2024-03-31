@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { ProfileAction } from "../components";
-import { LogoImage, SearchIcon } from "../constants/image";
-import { useAuth, useProfile } from "../hooks";
+import { ProfileAction } from "..";
+import { LogoImage, SearchIcon } from "../../constants/image";
+import { useAuth, useProfile } from "../../hooks";
 
 export default function Header() {
   const { auth } = useAuth();

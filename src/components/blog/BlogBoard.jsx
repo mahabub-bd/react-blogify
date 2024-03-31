@@ -1,11 +1,14 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { actions } from "../../actions";
-import { FavouriteBlog, PopularBlog } from "../../components";
+import {
+  BlogList,
+  FavouriteBlog,
+  Loading,
+  PopularBlog,
+} from "../../components";
 import { ServerDown } from "../../constants/image";
 import { useBlog } from "../../hooks";
-import Loading from "../Loading";
-import BlogList from "./BlogList";
 
 const BlogBoard = () => {
   const { state, dispatch } = useBlog();
