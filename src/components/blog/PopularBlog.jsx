@@ -1,50 +1,30 @@
 import axios from "axios";
-import { useEffect, useReducer } from "react";
-import { actions } from "../../actions";
+import { useEffect, useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
-import {
-  initialState,
-  mostpopularReducer,
-} from "../../reducers/MostpopularReducer";
 
 export default function PopularBlog() {
-  const [state, dispatch] = useReducer(mostpopularReducer, initialState);
+  const [popularBlogs, setPopularBlog] = useState([]);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchData = async () => {
-      dispatch({ type: actions.mostpopular.DATA_FETCHING });
+    const fetchPopularBlogs = async () => {
       try {
         const response = await axios.get(
           `${import.meta.env.VITE_SERVER_BASE_URL}/blogs/popular`
         );
 
-        dispatch({
-          type: actions.mostpopular.DATA_FETCHED,
-          data: response.data,
-        });
+        if (response.status === 200) {
+          setPopularBlog([...response.data.blogs]);
+        }
       } catch (error) {
-        console.error("Error fetching blogs:", error);
-
-        dispatch({
-          type: actions.mostpopular.DATA_FETCHED_ERROR,
-          error: error.message,
-        });
+        new Error(error);
       }
     };
 
-    fetchData();
-  }, []); // Empty dependency array ensures this effect only runs once on component mount
-
-  if (state.loading) {
-    return (
-      <div className="min-h-[740px] flex justify-center items-center">
-        Fetching Populat Blog Data ...
-      </div>
-    );
-  }
+    fetchPopularBlogs();
+  }, []);
 
   const handleSingleBlogDetails = (blogId) => {
     navigate(`/blogs/${blogId}`);
@@ -57,7 +37,7 @@ export default function PopularBlog() {
       </h3>
 
       <ul className="space-y-5 my-5">
-        {state?.blogs?.map((blog) => (
+        {popularBlogs.map((blog) => (
           <li
             className="sidebar-card"
             key={blog.id}

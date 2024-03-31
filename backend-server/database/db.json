@@ -222,9 +222,6 @@
         },
         {
           "id": "65aff389f1822a5e9f43"
-        },
-        {
-          "id": "883d1c315241dff57044"
         }
       ],
       "comments": [
@@ -510,7 +507,18 @@
           "id": "346d7a36b3c41f3fbfa2"
         }
       ],
-      "comments": [],
+      "comments": [
+        {
+          "id": "6158112c9a73ee2ced70",
+          "content": "Nice",
+          "author": {
+            "id": "883d1c315241dff57044",
+            "firstName": "Mahabub ",
+            "lastName": "Hossain ",
+            "avatar": "avatar-1710581637038-224321940.jpg"
+          }
+        }
+      ],
       "createdAt": "2024-02-24T09:01:37.581Z",
       "isFavourite": false
     },
@@ -899,33 +907,6 @@
       "likes": [],
       "comments": [],
       "createdAt": "2024-03-14T10:17:27.531Z"
-    },
-    {
-      "id": "fb655514b83655ea5447",
-      "title": "Cloud computing challenges and opportunities for the public sector",
-      "content": "1. Security and compliance requirements\r\nWhether it’s HIPAA, PCI DSS, NIST, FedRAMP, or something else, security and compliance isn’t anything new for public sector organizations. No matter how familiar you are with various compliance frameworks, shifting to the cloud means navigating new regulations while ensuring security standards.\r\n\r\n2. Lack of cloud workers\r\nHistorically, the public sector has struggled to compete with the private sector for tech talent. And that hasn’t changed. \r\n\r\nEven as more tech talent enters the market (due to layoffs in the tech industry), government agencies struggle to recruit and retain cloud engineers. Why? Complex hiring processes, less competitive benefits, and lack of flexibility often top the list.\r\n\r\nBut legacy technology systems also present a substantial barrier. Many cloud workers want to stay on the cutting edge and lack the skills or desire to work with the legacy systems that pervade public sector organizations. \r\n\r\n>>> Check out these tips to fill your federal agency’s cloud computing jobs.\r\n\r\n3. Acquiring cloud services that meet public sector contract requirements\r\nCloud computing services use a pay-as-you-go pricing model. This lets agencies scale their cloud services up or down to meet their current needs. \r\n\r\nPublic sector organizations can use indefinite-delivery, indefinite-quantity (IDIQ) contracts to invest in metered services like cloud computing. However, these contracts are often time-consuming and costly to set up. \r\n\r\nEven if you’re able to navigate IDIQ contracts, your agency may face scrutiny about which cloud service providers you offer those contracts to.\r\n\r\n>>> Learn more about multicloud for public sector organizations.\r\n\r\n4. Legacy infrastructure spending\r\nPublic sector organizations, including the federal government, continue to prioritize legacy, on-premises systems despite the push to the cloud.\r\n\r\nIn fact, even though 54% of public sector CIOs said they’d increase cloud spend at the beginning of 2022, only 35% said they’d decrease spending on legacy infrastructure and data center technologies. As long as agencies continue to prioritize legacy systems, they won’t see full cloud transformation.\r\n\r\n7 cloud computing opportunities for public sector\r\nDespite the challenges, cloud computing still offers opportunities for public sector organizations to enhance their operations. If your agency can think beyond the technology itself to the people and processes that will manage it, you’ll see cloud success.\r\n\r\n1. Leverage a shared responsibility model\r\nCloud service providers use a shared responsibility model that defines which infrastructure responsibilities they own and which they leave to individual organizations. \r\n\r\nThese models can help you allocate resources more effectively. For example, if you aren’t responsible for managing the cloud’s software or hardware, you can dedicate more technologists to critical areas like cybersecurity.\r\n\r\nJust make sure you fully understand the shared responsibility model and what you and your cloud workers are responsible for.",
-      "thumbnail": "thumbnail-1710412843000-509428301.webp",
-      "author": {
-        "id": "883d1c315241dff57044",
-        "firstName": "Mahabub ",
-        "lastName": "Hossain",
-        "avatar": null
-      },
-      "tags": "cloud",
-      "likes": [],
-      "comments": [
-        {
-          "id": "154a59103ed73431e0b1",
-          "content": "Nice ",
-          "author": {
-            "id": "883d1c315241dff57044",
-            "firstName": "Mahabub ",
-            "lastName": "Hossain",
-            "avatar": null
-          }
-        }
-      ],
-      "createdAt": "2024-03-14T10:22:45.552Z"
     },
     {
       "id": "36c68f7db1570c8c235b",

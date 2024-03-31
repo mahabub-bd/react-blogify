@@ -30,16 +30,6 @@ const singleBlogReducer = (state, action) => {
       };
     }
 
-    case actions.blog.DELETE_BLOG_SUCCESS: {
-      const updatedBlogs = state.blogs.filter(
-        (blog) => blog.id !== action.blogId
-      );
-      return {
-        ...state,
-        blogs: updatedBlogs,
-      };
-    }
-
     case actions.singleblog.NEW_COMMENT_ADD: {
       return {
         ...state,

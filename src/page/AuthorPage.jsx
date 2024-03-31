@@ -36,7 +36,7 @@ export default function AuthorPage() {
   return (
     <div className="container">
       <ProfileInfo />
-      <MyBlog blogs={state?.user?.blogs} />
+      <MyBlog blogs={state?.user?.blogs} title="User Blogs ...." />
     </div>
   );
 }

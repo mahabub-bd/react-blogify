@@ -1,35 +1,25 @@
-import { useEffect, useReducer } from "react";
-import { actions } from "../../actions";
+import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 import { useAuth, useAxios } from "../../hooks";
-import { favoriteReducer, initialState } from "../../reducers/FavouriteReducer";
 
 export default function FavouriteBlog() {
-  const [state, dispatch] = useReducer(favoriteReducer, initialState);
+  const [favoriteBlogs, setfavoriteBlogs] = useState([]);
 
   const navigate = useNavigate();
   const { api } = useAxios();
   const { auth } = useAuth();
 
   useEffect(() => {
-    dispatch({ type: actions.favourite.DATA_FETCHING });
     const fetchData = async () => {
       if (auth?.authToken) {
         try {
           const response = await api.get(
             `${import.meta.env.VITE_SERVER_BASE_URL}/blogs/favourites`
           );
-
-          dispatch({
-            type: actions.favourite.DATA_FETCHED,
-            data: response.data,
-          });
+          setfavoriteBlogs([...response.data.blogs]);
         } catch (error) {
-          dispatch({
-            type: actions.favourite.DATA_FETCHED_ERROR,
-            error: error.message,
-          });
+          new Error(error);
         }
       }
     };
@@ -46,13 +36,13 @@ export default function FavouriteBlog() {
         Your Favourites ❤️
       </h3>
 
-      {state?.loading && (
+      {!auth?.authToken && (
         <p className="mt-5 text-center text-slate-400 font-medium hover:text-slate-300 transition-all">
           Need Login see Favourite Blog{" "}
         </p>
       )}
       <ul className="space-y-5 my-5">
-        {state?.blogs?.map((blog) => (
+        {favoriteBlogs?.map((blog) => (
           <li
             className="sidebar-card"
             key={blog.id}
